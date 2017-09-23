@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .focus{
+            border: 1px solid #f00;
+            background: #fcc;
+        }
+    </style>
+</head>
+<body>
+<h1>个人基本信息</h1>
+姓名：<input type = "text" value = "mingcheng" enable><br>
+密码：<input type = "password" value = "1234" enable><br>
+个人详细信息：<input type = "text" value = "mingchengwwww" enable>
+<script src = "jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        $(":input").on("focus", function(){
+            $(this).addClass("focus");
+        }).on("blur", function(){
+            $(this).removeClass("focus");   //  $(":input")不好使，因为不能选中当前的这个 选中的是3个
+        })
+    });
+    </script>
+</body>
+</html>

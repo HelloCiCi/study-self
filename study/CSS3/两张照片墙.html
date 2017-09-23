@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #container{
+            width: 500px;
+            margin: 200px auto;
+            position: relative;
+        }
+
+        #container img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border: 10px solid #ccc;
+            -webkit-box-shadow: 5px 5px 5px rgba(50, 50, 50, .4);
+            -moz-box-shadow: 5px 5px 5px rgba(50, 50, 50, .4);
+            -o-box-shadow: 5px 5px 5px rgba(50, 50, 50, .4);
+            box-shadow: 5px 5px 5px rgba(50, 50, 50, .4);
+            -ms-box-shadow: 5px 5px 5px rgba(50, 50, 50, .4);
+            transition: all 1s ease;
+        }
+
+        #container img:nth-child(1){
+            transform: rotate(30deg);
+        }
+
+        #container img:nth-child(2){
+            transform: rotate(-15deg);
+        }
+
+        #container img:hover{
+            -webkit-box-shadow: 10px 10px 10px rgba(50, 50, 50, .4);
+            -moz-box-shadow: 10px 10px 10px rgba(50, 50, 50, .4);
+            -o-box-shadow: 10px 10px 10px rgba(50, 50, 50, .4);
+            -ms-box-shadow: 10px 10px 10px rgba(50, 50, 50, .4);
+            box-shadow: 10px 10px 10px rgba(50, 50, 50, .4);
+            transform: scale(1.2);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="imgs/img01.jpg">
+        <img src="imgs/img02.jpg">
+    </div>
+</body>
+</html>

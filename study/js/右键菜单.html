@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+
+        ul{
+            width: 100px;
+            height: 170px;
+            /*border: solid 1px #ccc;*/
+            display: none;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        li{
+            list-style: none;
+            border: solid 1px #ccc;
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+
+            var oUl = document.getElementById("ul");
+            var oLi = oUl.getElementsByTagName("li");
+
+            document.oncontextmenu = function(e){
+                e = e || window.event;
+                oUl.style.display = "block";
+                oUl.style.top = e.clientY + "px";
+                oUl.style.left = e.clientX + "px";
+
+                return false;
+            };
+
+            for(var i = 0; i < oLi.length; i++){
+               oLi[i].onclick = function(){
+                   alert(this.innerHTML);
+               };
+            }
+            document.onclick = function(){
+                oUl.style.display = "none";
+            };
+        };
+
+
+
+
+
+    </script>
+</head>
+<body>
+<ul id="ul">
+    <li>点击</li>
+    <li>删除</li>
+    <li>选择</li>
+    <li>标记</li>
+    <li>添加</li>
+</ul>
+
+</body>
+</html>

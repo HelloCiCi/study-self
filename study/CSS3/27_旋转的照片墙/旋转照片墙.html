@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #container .img{
+            width: 125px;
+            height: 125px;
+            border: white 5px solid;
+            -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+            -ms-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+            -o-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+
+<script>
+    var ROW = 4, COL = 6, NUM = ROW * COL;
+    var oContainer = document.getElementById("container");
+    var count = 0;
+    for(var i = 0; i < 24 ; i++){
+        var oThumbsImg = new Image();
+        oThumbsImg.onload = function(){
+            count++;
+            if(count == NUM * 2){
+                loadSuccess();
+            }
+        }
+
+        oThumbsImg.src = "img/thumbs/"+ (i+1) +".jpg";
+//        oContainer.appendChild(oThumbsImg);
+
+
+        var oBigImg = new Image();
+        oBigImg.onload = function(){
+            count++;
+            if(count == NUM * 2){
+                loadSuccess();
+            }
+        }
+
+        oBigImg.src = "img/"+ (i+1) +".jpg";
+//        oContainer.appendChild(oBigImg);
+    }
+
+    function loadSuccess(){
+        for(var i = 0; i < ROW; i++){
+            for(var i = 0; i < COL; i++) {
+                var oDiv = document.createElement("div");
+                oDiv.style.backgroundImage = "url(img/thumbs/" + (i + 1) + ".jpg)";
+                oDiv.className = 'img';
+                oContainer.appendChild(oDiv);
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

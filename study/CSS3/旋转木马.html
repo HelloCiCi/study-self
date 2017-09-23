@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body{
+            background: black;
+            perspective: 1000px;
+            perspective-origin: 50% -400px;
+        }
+
+        #container{
+            width: 150px;
+            height: 150px;
+            position: relative;
+            margin: 300px auto;
+            transform-style: preserve-3d;
+            transition: all 2s linear;
+        }
+
+        #container img{
+            width: 150px;
+            height: 125px;
+            border: solid 3px #fff;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            transition: all 2s linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+<script>
+    var oContainer = document.getElementById('container');
+    var count = 0;
+    for(var i = 0; i < 9; i++){
+        var oImg = new Image();
+        oImg.onload = function(){
+            console.log("傻子");
+
+            count++;
+            if(count == 9){
+                rotate();
+            }
+        };
+        oImg.src = "images/"+ (i+1) +".jpg";
+        oContainer.appendChild(oImg);
+    }
+
+    var num = 0;
+    oContainer.onclick = function(){
+        num++;
+        oContainer.style.transform = "rotateY("+ num * 40 +"deg)";
+    }
+
+
+
+    function rotate(){
+        var aImg = document.getElementsByTagName('img');
+        for(var i = 0; i < aImg.length; i++){
+            aImg[i].style.transform = "rotateY("+ i*40 +"deg) translateZ(230px)";
+            aImg[i].style.transformDelay = i*100 + "ms";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

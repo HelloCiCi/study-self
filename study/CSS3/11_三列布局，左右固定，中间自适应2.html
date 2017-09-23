@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            border: 0px;
+            padding: 0px;
+            margin: 0px;
+        }
+        #left{
+            background: red;
+            height: 400px;
+            width: 300px;
+            /*float: left;*/
+        }
+
+        #right{
+            background: greenyellow;
+            height: 400px;
+            width: 300px;
+            /*float: right;*/
+        }
+
+        #center{
+            background: yellow;
+            height: 400px;
+            flex-grow: 1;
+        }
+
+        #main{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="left"></div>
+    <div id="center"></div>
+    <div id="right"></div>
+</div>
+
+</body>
+</html>

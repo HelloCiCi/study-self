@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        header{
+            width: 100%;
+            height: 100px;
+            display: flex;
+            /*background: #cccccc;*/
+        }
+
+        header #img{
+            /*width: 30%;*/
+            float: left;
+            text-align: center;
+            margin-top: 10px;
+            flex-grow: 1;
+        }
+
+
+        header #img img{
+            height: 73px;
+        }
+
+       header nav{
+          /*width: 30%;*/
+           float: left;
+           cursor: pointer;
+           margin: 40px 10px;
+           /*flex-grow: 1;*/
+       }
+
+        header #login{
+            /*width: 30%;*/
+            float: right;
+            text-align: right;
+            margin-right: 15px;
+            margin-top: 35px;
+            /*flex-grow: 1;*/
+        }
+
+        header .log{
+            color: #CBA57A;
+            display: inline-block;
+            font-size: 14px;
+            margin:0px 5px;
+        }
+
+        header .enjoy{
+            display: inline-block;
+            margin:0px 5px;
+        }
+
+        figure{
+            height: 0;
+            padding-top: 50%;
+            background-image: url(img/kv-desktop-cn-20170724152434.jpg);
+            background-size: cover;
+        }
+
+        #home-rewards{
+            width: 100%;
+            height: 220px;
+            background: url(img/rewards_bg.png) center;
+        }
+
+        #home-rewards #left p,#home-rewards #right span{
+            color: white;
+        }
+
+        #home-rewards #right #right-knowmore{
+            float: left;
+            color: #a98e67;
+            margin-top: 16px;
+        }
+
+        #home-rewards #left,#home-rewards #right{
+            width: 50%;
+            float: left;
+            height: 170px;
+
+        }
+        #home-rewards #enjoy-wrapper{
+            width: 250px;
+            height: 100px;
+            /*background: yellow;*/
+            text-align: center;
+            margin-top: 60px;
+            float: right;
+            margin-right: 35px;
+        }
+
+        #home-rewards #left p{
+            margin-bottom: 5px;
+        }
+
+
+        #home-rewards .span0{
+            font-size: 33px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        #home-rewards #right a{
+            color: #A98E67;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            width: 114px;
+            height: 50px;
+            border: solid 2px #A98E67;
+        }
+
+        #home-rewards .span1{
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        #right a{
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        #home-rewards #right{
+            margin-top: 45px;
+        }
+
+        #home-rewards #right-enter {
+            display: inline-block;
+            float: left;
+        }
+
+        #iphone-app{
+            width: 100%;
+            height: 220px;
+            background: url(img/app_bg副本.gif);
+        }
+
+        #db-phone{
+            /*border: 1px solid red;*/
+            width: 180px;
+            height: 195px;
+            background: url(img/app_device.png) no-repeat;
+            background-size: contain;
+            float: right;
+            margin-top: 24px;
+        }
+
+        #db-phonecontain{
+            width: 33%;
+            float: left;
+
+        }
+
+        #two-barcontainer{
+            width: 26%;
+            height: 200px;
+            float: left;
+            text-align: center;
+            /*border: 1px solid red;*/
+        }
+
+        #two-bar-codes{
+            width: 130px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        #app-knowmore{
+            height: 50px;
+            width: 37%;
+            float: left;
+            margin-top: 50px;
+            /*border: 1px solid red;*/
+        }
+
+        #app-knowmore p{
+            color: #3d3d3d;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        #app-knowmore #knowmore{
+            color: #b89f7a;
+            font-size: 15px;
+
+        }
+
+        #blue-banner{
+            width: 100%;
+            height: 0;
+            padding-top: 23.96%;
+            background: url(img/banner-home.jpg);
+            background-size: cover;
+        }
+
+        #two-picshow{
+            width: 100%;
+        }
+
+        #two-picshow #left-show, #two-picshow #right-show{
+            width: 50%;
+            height: 0px;
+            padding-top: 50%;
+            background: url(img/summer3-wave1-tmall-20170721111221.jpg) no-repeat;
+            background-size: contain;
+            float: left;
+        }
+
+        #two-picshow #right-show{
+            background: url(img/kafei.jpg) no-repeat;
+            background-size: cover;
+            /*background-size: 50% 50%;*/
+        }
+
+        #green{
+            width: 100%;
+            height: 200px;
+            /*padding-top: 15%;*/
+            background-color: #106e4b;
+        }
+
+        #green-starsay{
+            width: 38%;
+            float: left;
+            text-align: right;
+        }
+
+        #green-code{
+            width: 10%;
+            float: left;
+            text-align: center;
+        }
+
+        #green-cup{
+            width: 10%;
+            float: left;
+            text-align: right;
+        }
+
+        #green-word{
+            width: 20%;
+            float: left;
+            text-align: center;
+        }
+
+        #green-starsay img{
+            width: 177px;
+            margin-top: 50px;
+        }
+
+        #green-code img{
+            width: 100px;
+            height: 100px;
+            margin-top: 40px;
+        }
+
+        #green-cup img{
+            width: 100px;
+            height: 112px;
+            margin-top: 40px;
+        }
+
+        #green-word img{
+            height: 98.8px;
+            margin-top: 43px;
+        }
+
+        #watch{
+            width: 100%;
+            height: 220px;
+        }
+
+        #apple-watch{
+            width: 40%;
+            height: 0px;
+            padding-top: 15.25%;
+            float: left;
+            background: url(img/web-iwatch-cn.png) right no-repeat;
+        }
+
+        #watch-know{
+            width: 33%;
+            float: left;
+            /*border: solid 1px red;*/
+            margin-top: 40px;
+            margin-right: 20px;
+        }
+
+        #watch-img{
+            width: 23%;
+            float: right;
+            margin-top: 40px;
+        }
+
+        #watch-know p{
+            font-size: 18px;
+            color: #3d3d3d;
+            line-height: 35px;
+            width: 354px;
+            height: 98px;
+            margin-bottom: 10px;
+            float: right;
+        }
+
+        #watch-know a{
+            display: inline-block;
+            width: 354px;
+            color: #967a50;
+            font-size: 14px;
+            float: right;
+        }
+
+        #watch-img img{
+            width: 130px;
+        }
+
+        #watch-img p{
+            color: #3d3d3d;
+            width: 130px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #collection{
+            width: 100%;
+            /*height: 580px;*/
+            background: #f5f5f5;
+        }
+
+        #collection-four .item{
+            float: left;
+            width: 240px;
+            height: 280px;
+            border: solid 1px #ccc;
+            margin: 15px;
+            -webkit-box-shadow: 0 0px 2px #ccc;
+        }
+
+        #collection-four{
+            margin: 0 auto;
+            width: 76%;
+            background: #f5f5f5;
+            /*text-align: center;*/
+        }
+
+        #collection-four img{
+            width: 240px;
+            height: 160px;
+        }
+
+        .collection-choose p{
+            text-align: center;
+        }
+
+        #collection-title{
+            color: #3d3d3d;
+            font-size: 30px;
+            padding-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        #collection-subtitle{
+            color: #8b8b8b;
+            font-size: 18px;
+            margin-bottom: 75px;
+        }
+
+        .item .line-one{
+            color: #2f2f2f;
+            font-weight: 800;
+            text-align: center;
+            font-size: 18px;
+            margin-top: 15px;
+            margin-bottom: 12px;
+        }
+
+        .item .line-two{
+            text-align: center;
+            font-size: 14px;
+            color: #707175;
+        }
+
+        #purch-now{
+            width: 100%;
+            height: 608px;
+            background: #060608;
+        }
+
+        #purch-all{
+            margin: 0 auto;
+            width: 89%;
+        }
+
+        #purch-img{
+            width: 50%;
+            float: left;
+            /*border: solid 1px white; */
+        }
+
+        #purch-word{
+            width: 48%;
+            float: left;
+            padding-top: 175px;
+            /*border: solid 1px white;*/
+
+        }
+
+        h3{
+            color: #a98e67;
+            font-weight: 900;
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        #purch-word p{
+            color: #707070;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        #purch-word .purch-button{
+            text-align: center;
+            color: #a98e67;
+            border: 2px solid #a98e67;
+            display: inline-block;
+            line-height: 45px;
+            width: 114px;
+            height: 45px;
+            margin-right: 20px;
+            float: left;
+            display: inline-block;
+        }
+
+        footer{
+            background: #292929;
+            width: 100%;
+            height: 826px;
+        }
+
+        footer .first{
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 7px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        footer .others{
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        footer ul{
+            float: left;
+        }
+
+        footer ul li{
+            list-style: none;
+            line-height: 35px;
+        }
+
+        footer #footer-top{
+            width: 80%;
+            margin: 0 auto;
+            height: 250px;
+            /*border: solid 1px red;*/
+            padding-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        footer #footer-bottom{
+            width: 80%;
+            margin: 0 auto;
+            height: 250px;
+            /*border: solid 1px red;*/
+        }
+
+        #footer-code{
+            height: 230px;
+        }
+
+        #footer-code img{
+            height: 100px;
+        }
+
+        #footer-code p{
+            color: #fff;
+        }
+
+        #footer-top ul,#footer-bottom ul{
+            width: 25%;
+            font-size: 15px;
+        }
+
+        #purch-a{
+            width: ;
+            height: 50px;
+        }
+
+        #purch-containa{
+            margin: 0 auto;
+            width: 100%;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media (max-width: 768px){
+            figure{
+                width: 100%;
+                background-image: url(img/kv-mobile-cn-20170724152449.jpg);
+                height: 0;
+                padding-top: 85%;
+            }
+
+            #home-rewards{
+                height: 490px;
+            }
+
+            #home-rewards #left{
+                height: 130px;
+                width: 100%;
+            }
+
+            #home-rewards #enjoy-wrapper{
+                float: none;
+                margin: 0 auto;
+                margin-top: 55px;
+            }
+
+            #home-rewards #right{
+                text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 50px;
+            }
+
+            #home-rewards .span0{
+                font-size: 25px !important;
+                margin-bottom: 28px;
+            }
+
+            #home-rewards .span1{
+                font-size: 18px;
+                margin-bottom: 28px;
+            }
+
+            #home-rewards #right .enter{
+                display: inline-block;
+                width: 70%;
+                height: 46px;
+                margin: 0 auto;
+            }
+
+            #home-rewards #right .log{
+                margin-bottom: 15px;
+            }
+
+            #home-rewards #right #right-knowmore{
+                float: right;
+                margin-top: 30px;
+                color: #967a50;
+                cursor: pointer;
+            }
+
+            #home-rewards #right-enter{
+                width: 100%;
+                text-align: center;
+            }
+
+            #two-barcontainer{
+                display: none;
+            }
+
+            #db-phone{
+                border: 1px solid red;
+                height: 180px;
+                background: url(img/app_device.png) no-repeat;
+                background-size: contain;
+                float: left;
+            }
+
+            #db-phonecontain{
+                width: 100%;
+                /*float: left;*/
+
+            }
+
+            #app-knowmore{
+                height: 50px;
+                width: 37%;
+                float: left;
+                border: 1px solid red;
+            }
+
+            #app-knowmore p{
+                color: #3d3d3d;
+                font-size: 18px;
+            }
+
+            /*#app-knowmore #knowmore{*/
+                /*color: #b89f7a;*/
+                /*font-size: 15px;*/
+            /*}*/
+
+            #blue-banner{
+                background: url(img/mooncake-mobile.jpg);
+                width: 100%;
+                height: 0;
+                padding-top: 117%;
+                background-size: cover;
+            }
+
+            #two-picshow #left-show{
+                background: url(img/summer3-wave1-tmall.jpg);
+                padding-top: 100%;
+                width: 100%;
+                height: 0;
+                background-size: cover;
+            }
+
+            #two-picshow #right-show{
+                background: url(img/kafei.jpg);
+                padding-top: 100%;
+                width: 100%;
+                height: 0;
+                background-size: cover;
+            }
+
+
+
+        }
+
+        @media(max-width: 1067px){
+            #apple-watch{
+                width: 100%;
+                float: none;
+                background: url(img/mobile-iwatch-cn.png);
+
+            }
+        }
+
+        @media(max-width: 992px){
+
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <nav>菜单</nav>
+    <div id="img">
+        <img src = "img/logo.png">
+    </div>
+    <p id="login">
+        <span class = "enjoy">星享俱乐部</span><br>
+        <span class="log">登录</span>或<span class="log">注册</span>
+    </p>
+</header>
+<figure></figure>
+<div id="home-rewards">
+    <div id="left">
+        <div id="enjoy-wrapper">
+            <p>星享卡</p>
+            <img src = "img/rewards_logo_20170209.svg">
+        </div>
+    </div>
+    <div id="right">
+        <span class = "span0">星享俱乐部</span><br>
+        <span class="span1">开启您的星享之旅，星星越多、会员等级越高、好礼越丰富</span><br>
+        <div id="right-enter">
+            <a class = "enter log" href="#">登录</a>
+            <a class = "enter reg" href="#">注册</a>
+        </div>
+        <span id="right-knowmore">了解更多 >></span>
+    </div>
+</div>
+
+<div id="iphone-app">
+    <div id="db-phonecontain">
+        <div id="db-phone"></div>
+    </div>
+    <div id="two-barcontainer">
+        <img id="two-bar-codes" src="img/app_qr_20170209.png">
+    </div>
+    <div id="app-knowmore">
+        <p>下载全新星巴克中国官方APP，开启更便捷的星巴克体验。</p>
+    </div>
+    <a href="#" id="knowmore">了解更多 > ></a>
+</div>
+<div id="blue-banner"></div>
+<div id="two-picshow"  class = "clearfix">
+    <div id="left-show"></div>
+    <div id="right-show"></div>
+</div>
+<div id="green">
+    <div id="green-starsay">
+        <img src="img/wsg-title.png">
+    </div>
+    <div id="green-code">
+        <img src="img/wsg-qrcode.png">
+    </div>
+    <div id="green-cup">
+        <img src="img/wsg-cup.png">
+    </div>
+    <div id="green-word">
+        <img src="img/wsg-wording.png">
+    </div>
+</div>
+<div id="watch">
+    <div id="apple-watch" class="clearfix"></div>
+    <div id="watch-know">
+        <p>星享更同步。现在您可以通过Apple Watch打开星巴克移动应用。更便捷地支付、查询星享卡还有查找附近门店。</p>
+        <a href="#">了解更多 > ></a>
+    </div>
+    <div id="watch-img">
+        <img src="img/app_qr_20170209.png">
+        <p>扫码下载APP</p>
+    </div>
+</div>
+<div id="collection">
+    <div class = "collection-choose">
+        <p id="collection-title">星巴克精选</p>
+        <p id="collection-subtitle">在星巴克天猫旗舰店发现更多咖啡心意</p>
+    </div>
+    <div id="collection-four" class="clearfix">
+        <div class = "item">
+            <img src = "img/1@2x.png.jpeg">
+            <p class = "line-one">星享卡</p>
+            <p class = "line-two">开始你的星巴克之旅</p>
+        </div>
+        <div class = "item">
+            <img src = "img/2@2x.png.jpeg">
+            <p class = "line-one">星礼卡</p>
+            <p class = "line-two">用一份星礼，让心意相随</p>
+        </div>
+        <div class = "item">
+            <img src = "img/3@2x.png">
+            <p class = "line-one">电子产品券</p>
+            <p class = "line-two">心意 从这一杯开始</p>
+        </div>
+        <div class = "item">
+            <img src = "img/4@2x.png.jpeg">
+            <p class = "line-one">咖啡礼品券</p>
+            <p class = "line-two">星巴克用心制作</p>
+        </div>
+    </div>
+</div>
+<div id = "purch-now">
+    <div id="purch-all">
+        <div id="purch-img">
+            <img src = "img/homepage-reserve-coffees.png">
+        </div>
+        <div id="purch-word">
+            <h3>我们优质的咖啡产品</h3>
+            <p>我们持续在全世界各地寻找优质而稀少的咖啡豆，我们喜爱与您分享我们的新发现。我们在星巴克位于总部西雅图的星巴克臻选™咖啡烘焙工坊及品鉴馆为您精心烘焙星巴克臻选™咖啡。</p>
+            <div id="purch-containa">
+                <div id="purch-a">
+                    <a class = "purch-button left" href = "#">了解更多</a>
+                    <a class = "purch-button" href = "#">在这里购买</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div id="footer-top">
+        <ul>
+            <li><a class="first" href="#">最新资讯</a></li>
+            <li><a  class = "others"href="#">当季新品</a></li>
+            <li><a class = "others"href="#">星巴克月饼</a></li>
+            <li><a class = "others" href="#">气致™冷萃咖啡</a></li>
+            <li><a class = "others" href="#">冷萃冰咖啡</a></li>
+            <li><a class = "others" href="#">星巴克ORIGAMI™</a></li>
+            <li><a class = "others" href="#">星巴克焕新食</a></li>
+        </ul>
+        <ul>
+            <li><a class="first" href="#">菜单</a></li>
+            <li ><a class = "others" href="#">饮品</a></li>
+            <li><a class = "others" href="#">星巴克美食</a></li>
+            <li><a class = "others" href="#">星巴克美食</a></li>
+            <li><a class = "others" href="#">星巴克VIA® 免煮咖啡</a></li>
+            <li><a class = "others" href="#">茶瓦纳™</a></li>
+        </ul>
+        <ul>
+            <li><a class="first" href="#">星享卡</a></li>
+            <li><a class = "others" href="#">登录账户</a></li>
+            <li><a class = "others" href="#">注册星享卡</a></li>
+            <li><a class = "others" href="#">忘记密码</a></li>
+            <li><a class = "others" href="#">报失星享卡</a></li>
+            <li><a class = "others" href="#">购买星享卡</a></li>
+            <li><a class = "others" href="#">了解星享卡</a></li>
+        </ul>
+        <ul>
+            <li><a class="first" href="#">星巴克礼品卡</a></li>
+            <li><a class = "others" href="#">管理星礼卡</a></li>
+            <li><a class = "others" href="#">申请发票</a></li>
+            <li><a class = "others" href="#">购买星礼卡</a></li>
+            <li><a class = "others" href="#">了解星礼卡</a></li>
+            <li><a class = "others" href="#">购买星礼卡</a></li>
+        </ul>
+    </div>
+    <div id="footer-bottom">
+        <ul>
+            <li><a class="first" href="#">关于星巴克</a></li>
+            <li><a class = "others" href="#">企业新闻</a></li>
+            <li><a class = "others" href="#">我们的使命和价值观</a></li>
+            <li><a class = "others" href="#">星巴克责任</a></li>
+            <li><a class = "others" href="#">工作在星巴克中国</a></li>
+            <li><a class = "others" href="#">加入星巴克</a></li>
+            <li><a class = "others" href="#">星巴克在中国</a></li>
+            <li><a class = "others" href="#">历史回顾</a></li>
+        </ul>
+        <ul>
+            <li><a class="first" href="#">快捷链接</a></li>
+            <li><a class = "others" href="#">天猫旗舰店</a></li>
+            <li><a class = "others" href="#">星巴克门店</a></li>
+            <li><a class = "others" href="#">联系星巴克</a></li>
+            <li><a class = "others" href="#">下载手机应用</a></li>
+        </ul>
+        <ul>
+            <li><a class="first" href="#">常见问题</a></li>
+            <li><a class = "others" href="#">星享卡</a></li>
+            <li><a class = "others" href="#">星礼卡</a></li>
+            <li><a class = "others" href="#">移动应用</a></li>
+            <li><a class = "others" href="#">电子发票</a></li>
+            <li><a class = "others" href="#">星巴克中国</a></li>
+        </ul>
+        <div id="footer-code">
+            <img src="img/app_qr_20170209.png">
+            <p>扫码下载app</p>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

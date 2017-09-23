@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+
+    /**
+     * 获取当前元素样式
+     * @param elem
+     * @param attr
+     * @returns {*}
+     */
+    function getStyle(elem , attr) {
+        if (elem.currentStyle) {
+            return elem.currentStyle[attr];
+        }else if(window.currentStyle[attr])
+            return elem.getComputeredStyle(elem , false)[attr];
+        }else{
+            return elem.style[attr];
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

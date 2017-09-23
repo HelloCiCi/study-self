@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #first,#second{
+            width: 100px;
+        }
+
+        h3{
+            height: 30px;
+            line-height: 30px;
+            background: black;
+            color: white;
+            text-align: center;
+        }
+
+        .contain{
+           height: 96px;
+            /*border: 1px solid black;*/
+            display: none;
+        }
+
+        .contain li{
+            list-style: none;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+
+
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById("first");
+            var aH3 = oDiv.getElementsByTagName("h3");
+            var aUl = oDiv.getElementsByTagName("ul");
+
+            for(var i = 0;i < aH3.length;i++){
+                aH3[i].index = i;
+                aH3[i].onclick = function(){
+                    if(aUl[this.index].style.display == 'block'){
+                        aUl[this.index].style.display = 'none';
+                    }else{
+                        aUl[this.index].style.display = 'block';
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+<div id = "first">
+    <h3>管理区</h3>
+    <ul class = "contain">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+    </ul>
+    <h3>管理区</h3>
+    <ul class = "contain">
+        <li>001</li>
+        <li>002</li>
+        <li>003</li>
+    </ul>
+</div>
+
+</body>
+</html>

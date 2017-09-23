@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .circle,.circle::after{
+            width: 100px;
+            height: 100px;
+            background: transparent;
+            border: 10px solid;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -o-border-radius: 50%;
+            -ms-border-radius: 50%;
+        }
+
+        .circle::after{
+            position: absolute;
+            content: "";
+            top: -10px;
+            left: -10px;
+        }
+
+        .blue{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-color: blue;
+        }
+
+        .blue.circle::after{
+            border-color: blue;
+            z-index: 1;
+            border-bottom-color: transparent;
+        }
+
+        .black{
+            position: absolute;
+            top: 0px;
+            left: 130px;
+            border-color: black;
+        }
+
+        .black.circle::after{
+            border-color: black;
+            z-index: 1;
+            border-left-color: transparent;
+        }
+
+        .red{
+            position: absolute;
+            top: 0px;
+            left: 260px;
+            border-color: red;
+        }
+
+        .red.circle::after{
+            border-color: red;
+            z-index: 2;
+            border-left-color: transparent;
+        }
+
+        .yellow{
+            position: absolute;
+            top: 65px;
+            left: 65px;
+            border-color: yellow;
+        }
+
+        .yellow.circle::after{
+            border-color: yellow;
+            /*border-right-color: transparent;*/
+        }
+
+        .green{
+            position: absolute;
+            top: 65px;
+            left: 195px;
+            border-color: green;
+        }
+
+        .green.circle::after{
+            border-color: green;
+            z-index: 1;
+            border-top-color: transparent;
+        }
+    </style>
+</head>
+<body>
+<div class = "circle blue"></div>
+<div class = "circle black"></div>
+<div class = "circle red"></div>
+<div class = "circle yellow"></div>
+<div class = "circle green"></div>
+</body>
+</html>

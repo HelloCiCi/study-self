@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding:0px;
+            margin: 0px;
+        }
+
+        h3{
+            background: #cccccc;
+            color: white;
+            height: 100px;
+            width: 960px;
+            text-align: center;
+            line-height: 100px;
+            margin: 30px auto;
+        }
+        
+        figure {
+            width: 960px;
+            height: 540px;
+            margin: 0 auto;
+            background: url(01.jpg) no-repeat;
+            background-size: cover;
+        }
+
+
+        /*figure{*/
+            /*width: 960px;*/
+            /*margin: 0 auto;*/
+        /*}*/
+        
+        figure img{
+            width: 960px;
+            display:block;
+        }
+        
+        article{
+            margin: 0 auto;
+            width: 960px;
+        }
+        
+        
+        article section{
+            float: left;
+            height: 300px;
+            text-align: center;
+
+        }
+
+        article #left{
+            background: greenyellow;
+            width: 630px;
+            margin-right: 30px;
+        }
+
+        article #right{
+            background: yellow;
+            width: 300px;
+        }
+
+        .clearfix::after{
+            content:'';
+            display: block;
+            clear:  both;
+        }
+
+        @media(max-width : 959px){
+            h3,article,figure{
+                width:100%;
+            }
+
+            #left{
+                width: 67%;
+                margin-right: 3%;
+            }
+
+            #right{
+                width: 30%;
+            }
+            /*figure img{*/
+                /*width: 100%;*/
+            /*}*/
+            figure{
+                background-image: url(01_s_2x.jpg);
+                height: 0;
+                padding-top: 56.25%;
+            }
+        }
+
+        @media(max-width : 468px){
+            #left{
+                width: 100%;
+            }
+
+            #right{
+                width: 100%;
+            }
+
+            figure{
+                background-image:url(01_s.jpg);
+            }
+        }
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h3>页头</h3>
+    </header>
+    <nav>
+        <h3>导航</h3>
+    </nav>
+    <figure>
+        <!--<img src="01.jpg" alt = "小海豹">   用背景图片做了，就不能切换图片-->
+    </figure>
+    <article class = "clearfix">
+        <section id="left">
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
+            </p>
+        </section>
+        <section id="right">
+            <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus
+            vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam
+            quis magna facilisis, eget feugiat nisi lacinia
+            </p>
+        </section>
+    </article>
+    <footer>
+        <h3>页脚</h3>
+    </footer>
+
+
+</body>
+</html>

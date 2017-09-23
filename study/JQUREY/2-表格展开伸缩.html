@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        thead{
+            border-bottom: solid 1px black;
+        }
+
+        td{
+            width: 100px;
+            height: 25px;
+        }
+
+        .parent{
+            background: yellow;
+            cursor: pointer;
+        }
+
+        /*#row1 #row2 #row3{*/
+            /*width: 320px;*/
+            /*background: orange;*/
+        /*}*/
+
+        .selected{
+            background: red;
+            color: #fff;
+        }
+
+
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>暂住地</td>
+    </thead>
+    <tbody>
+        <tr class = "parent" id="row1"><td>前台设计组</td></tr>
+        <tr class="child-row1"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+        <tr class="child-row1"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+        <tr class = "parent" id="row2"><td>前台设计组</td></tr>
+        <tr class="child-row2"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+        <tr class="child-row2"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+        <tr class = "parent" id="row3"><td>前台设计组</td></tr>
+        <tr class="child-row3"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+        <tr class="child-row3"><td>张山</td><td>男</td><td>浙江宁波</td></tr>
+    </tbody>
+</table>
+<script src="jquery-1.11.2.js"></script>
+<script>
+    $(function(){
+        $(".parent").on("click",function(){
+            $(this).toggleClass("selected").siblings(".child-" + this.id).toggle();
+        });
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

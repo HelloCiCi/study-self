@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id = "div1">
+    <div id="div2">
+        <div>5566</div>
+        <h1 id="h1">hhh</h1>
+        <p id="p">111</p>
+    </div>
+
+</div>
+
+<script>
+    var oDiv1 = document.getElementById("div1");
+    var oDiv2 = oDiv1.getElementById("div2");
+    var oH1 = document.getElementById("h1");
+    var oP = oDiv2.getElementById("p");
+
+//    oDiv1.replaceChild(new,old);
+
+//    function siblings(elem){
+//        var arr = [];
+//        var elements = elem.parentNode.children;
+//         for(var i = 0;i < elements.length;i++){
+//             if(elements[i] != elem){
+//                 arr.push();
+//             }
+//         }
+//        return arr;
+//    }
+//    console.log(siblings(oH1));
+
+
+    /**
+     * 删除给定的元素
+     * @param elem
+     */
+//    function remove(elem){
+//        elem.parentNode.removeChild(elem);
+//
+//    }
+
+    /**
+     * 在给定元素的前面插入一个新元素
+     */
+
+    function before(elem,newelem){
+        elem.parentNode.insetBefore(newelem);
+    }
+
+    console.log(op,oH1);
+
+    /**
+     * 在给定当前元素的后面插入一个新的元素
+     */
+
+     function after(elem,newNode){
+        if(next.sibling){
+
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

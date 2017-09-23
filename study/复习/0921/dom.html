@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<li>001</li>
+<li>002</li>
+<li>003</li>
+<script>
+    console.log(NaN == NaN); //false
+    var arr = [1,2,3,NaN,4,5,6];
+    console.log(arr.indexOf(1));  //输出0；没有输出-1；
+    console.log(arr.lastIndexOf(1));
+    arr.foreach(function(value){
+        if(arr.indexOf(value)) == arr.lastIndexOf(value)){
+            console.log(value);
+        }
+    })
+
+
+    setTimeout(function(){
+        console.log(1111);
+    },0);   //临时队列
+    console.log(22222);  //主循环 先执行
+
+
+    var aLi = document.querySelector('li');
+
+    for(var i = 0; i < aLi.length; i++){
+        aLi[i].oncilck = function(){
+            var that = this;
+            setTimeout(function(){
+                console.log(this.innerHTML);
+            },1000);
+        }
+    }
+
+    var obj = {
+        a:10;
+        fn:function(){}
+    }
+
+    //改变this指向 call,apply,   bind(不会马上执行调用的函数，会返回那个函数，再加（）会立即执行)
+
+</script>
+
+</body>
+</html>

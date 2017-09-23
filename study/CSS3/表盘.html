@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        #clock{
+            width: 200px;
+            height: 200px;
+            border: solid 1px black;
+            -webkit-border-radius: 50%;
+            -o-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            margin: 200px auto;
+            position: relative;
+        }
+
+        #clock li{
+            width: 2px;
+            height: 5px;
+            background: black;
+            position: absolute;
+            top: 0px;
+            left: 100px;
+            transform-origin: 0 100px;
+        }
+
+        #hour{
+            width: 4px;
+            height: 30px;
+            background: black;
+            position: absolute;
+            top: 70px;
+            left: 98px;
+        }
+
+        #min{
+            width: 4px;
+            height: 60px;
+            background: #ff0000;
+            position: absolute;
+            top: 30px;
+            left: 98px;
+        }
+
+        #sec{
+            width: 2px;
+            height: 70px;
+            background: black;
+            position: absolute;
+            top: 20px;
+            left: 99px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div id="clock">
+    <ul id="dial">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div id="min"></div>
+    <div id="hour"></div>
+
+    <div id="sec"></div>
+</div>
+
+<script>
+    var oUl = document.getElementById("dial");
+    var oHour = document.getElementById("hour");
+    var oMin = document.getElementById("min");
+    var oSec = document.getElementById("sec");
+    var lis = "";
+    for(var i = 0; i < 61; i++ ){
+        oUl.innerHTML = lis;
+        lis += "<li style='transform : rotate(" + i*6 + "deg)'></li>"
+    }
+
+    var now = new Date();
+    var second = now.getSeconds();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

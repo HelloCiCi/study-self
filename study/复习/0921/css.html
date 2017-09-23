@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div::selection{
+            background: red;
+        }
+
+        div::after{
+            content: "bbbbb";
+            /*选不中*/
+        }
+
+        div.a.b.c{
+            /*多类选择器，必须选中含有abc三个元素的选择器*/
+        }
+
+        /*span{*/
+            /*width: 200px;*/
+            /*height: 200px;*/
+            /*/!*行及元素怎样可以设置宽高*!/*/
+            /*display: block;*/
+            /*position: absolute;*/
+            /*float: left;*/
+        /*}*/
+
+        body{
+            /*没有设置高 也可以设置颜色*/
+            /*要么就给html也加*/
+            width: 100%;
+            height: 100%;
+            /*background: blue;*/
+        }
+
+        /*div{*/
+            /*width: 100%;*/
+            /*height: 100%;*/
+            /*background: indianred;*/
+        /*}*/
+
+        div{
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            width: 100%;
+            background: red;
+            border-sizing: border-box;
+            border-sizing:content-box;
+            /*可以修改标准盒模型和怪异盒模型*/
+        }
+
+        /*content padding border margin*/
+        /*text-algin,line-height 都是给父级元素设置*/
+        /*浮动了宽就是内容撑开的 wdith 设置值就好使了；*/
+        /*加浮动 或者 overflow：hidden；或者 加border （都给父级加）*/
+
+        /*多背景图片 url（）100px 100px ， url（）100px 100px ， url（）100px 100px */
+        /*background: url() 30px 30px #000; 图片填充的颜色*/
+        /*background: url() no-repeat center/contain #000; 必须加斜杠*/
+        /*position：relative；不脱离文档流*/
+
+
+
+
+    </style>
+</head>
+<body style = "background: blanchedalmond">
+<!--内联样式比id权重值还要高-->
+    <div>
+        aaaabc
+    </div>
+
+    <!--<span>-->
+        <!--行及元素怎样可以设置宽高-->
+    <!--</span>-->
+
+</body>
+</html>

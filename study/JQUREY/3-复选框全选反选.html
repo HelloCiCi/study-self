@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>你最喜欢的运动是？</h1>
+<input type="checkbox" name="hobby">1
+<input type="checkbox" name="hobby">2
+<input type="checkbox" name="hobby">3
+<input type="checkbox" name="hobby">4
+<input type="checkbox" name="hobby">5
+<br>
+<button id="check-all">全选</button>
+<button id="check-no">全不选</button>
+<button id="check-reverse">反选</button>
+<script src = "jquery-1.11.2.js"></script>
+<script>
+
+    $(function(){
+        var $input = $("input[type = checkbox]")
+       $("#check-all").on("click",function(){
+           $input.prop("checked",true);
+       });
+        $("#check-no").on("click",function(){
+            $input.prop("checked",false);
+        });
+        $("#check-reverse").on("click",function(){
+            $input.each(function(){
+                if($(this).prop("checked")){
+                    $(this).prop("checked",false);
+                }else{
+                    $(this).prop("checked",true);
+                }
+                //this.checked = !this.checked;
+            });
+        });
+
+
+
+
+
+
+
+
+
+
+    });
+
+
+
+    </script>
+
+</body>
+</html>

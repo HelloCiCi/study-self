@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+       #big, #small{
+           background: gray;
+           color: white;
+           cursor: pointer;
+       }
+        #text{
+            border: 1px solid black;
+            height: 150px;
+            width: 500px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<button id="big">放大</button>
+<button id="small">缩小</button><br>
+<div id="text">11w的点点滴滴多多多多多多多多多多多多多多
+                    多多多多多多多多多多多多多多多多多多多多多多多多
+                        呜呜呜呜无无无无无无无无无w那日内容南方人那个您服务我vi2nri2nign 你无法IE弄个</div>
+<script src = "jquery-1.11.2.js"></script>
+<script>
+$(function(){
+    var $text = $("#text");
+    $("#big").on("click",function(){
+        $text.height($text.height() + 50);
+    });
+    $("#small").on("click",function(){
+        $text.height($text.height() - 50);
+    });
+
+
+
+
+
+
+
+});
+
+
+
+
+</script>
+</body>
+</html>
