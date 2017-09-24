@@ -5,6 +5,7 @@
     <title></title>
 </head>
 <body>
+<input type = "number" min = "0" max = "10">
 <script>
     //如果原型上是基本类型 可以属性。方法 如果是引用类型 就不能属性。方法
 
@@ -25,7 +26,17 @@
     var u1 = new User();
     u1.say();
 
-</script>
+
+    //window.onload等所有资源文件加载完毕后执行 所以靠后执行
+    //文档就绪函数不会被覆盖 结构加载完成就执行
+
+    //JSON.parse();把##转化成对象
+    //JSON.stringify();把##转化成字符串
+    //异步 async 谁加在完成谁先执行
+    //异步     defer   统一加载完成后 顺序执行
+    //200rem font-size:16*200;
+
+ </script>
 
 </body>
 </html>
