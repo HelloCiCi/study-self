@@ -26,24 +26,29 @@
         }
         
         #container .img{
+            cursor: pointer;
             width: 125px;
             height: 125px;
             border: white 5px solid;
             position: absolute;
+            top: -200px;
+            left: -200px;
+            -webkit-transition: all 1s ease;
+            transition: all 1s ease;
             -webkit-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
             -ms-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
             -moz-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
             -o-box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
             box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
-
         }
+
     </style>
 </head>
 <body>
 <div id="container"></div>
 
 <script>
-    var ROW = 4, COL = 6, NUM = ROW * COL, THUMB_WIDTH = 130, THUMB_HEIGHT = 130, BIG_WIDTH = 750, BIG_HEIGHT = 750;
+    var ROW = 4, COL = 6, NUM = ROW * COL, THUMB_WIDTH = 125, THUMB_HEIGHT = 125, BIG_WIDTH = 750, BIG_HEIGHT = 500;
     var oContainer = document.getElementById("container");
     var count = 0;
     for(var i = 0; i < 24 ; i++){
@@ -53,7 +58,7 @@
             if(count == NUM * 2){
                 loadSuccess();
             }
-        }
+        };
 
         oThumbsImg.src = "img/thumbs/"+ (i+1) +".jpg";
 //        oContainer.appendChild(oThumbsImg);
@@ -65,7 +70,7 @@
             if(count == NUM * 2){
                 loadSuccess();
             }
-        }
+        };
 
         oBigImg.src = "img/"+ (i+1) +".jpg";
 //        oContainer.appendChild(oBigImg);
@@ -83,20 +88,71 @@
     function loadSuccess(){
         for(var i = 0; i < ROW; i++){
             for(var j = 0; j < COL; j++) {
-                index++
                 var oDiv = document.createElement("div");
+                index++;
                 oDiv.style.backgroundImage = "url(img/thumbs/" + index + ".jpg)";
                 oDiv.className = 'img';
-                oDiv.style.left = (LEFT_SPACE + j*LEFT_IMG_SPACE) + "px";
-                oDiv.style.top = -(TOP_SPACE + i*TOP_IMG_SPACE) + "px";
-
-                console.log(oContainer.offsetHeight);
-
+//                arr.push(oDiv);
+                oDiv.pos = {
+                    col : j,
+                    row : i
+                };
                 oContainer.appendChild(oDiv);
 //                console.log(oDiv.offsetLeft);
             }
         }
+
+        var arr = document.getElementsByClassName("img");
+        setTimeout(function(){
+            for(var i = 23; i >= 0; i--){
+                arr[i].style.left = (LEFT_SPACE + arr[i].pos.col * LEFT_IMG_SPACE) + "px";
+                arr[i].style.top = (TOP_SPACE + arr[i].pos.row * TOP_IMG_SPACE) + "px";
+                arr[i].style.transform = "rotate(" + (40 * Math.random()- 20) + "deg)";
+                arr[i].style.transitionDelay = (NUM - i) * 100 + "ms";
+            }
+        }, 0);
+
+        var BIG_LEFT = (oContainer.offsetWidth - BIG_WIDTH)/2;
+        var BIG_TOP = (oContainer.offsetHeight - BIG_HEIGHT)/2;
+        var bflag = true;//true表示散开要合上
+
+        oContainer.onclick = function() {
+            if (bflag) {
+                for (var i = 0; i < arr.length; i++) {
+                    arr[i].style.borderWidth = "1px";
+                    arr[i].style.borderColor = "white";
+                    arr[i].style.boxShadow = "none";
+                    arr[i].style.transform = "rotate(0deg)";
+                    arr[i].style.transitionDelay = "0ms";
+                    arr[i].style.top = (BIG_TOP + arr[i].pos.row * THUMB_HEIGHT) + "px";
+                    arr[i].style.left = (BIG_LEFT + arr[i].pos.col * THUMB_WIDTH) + "px";
+                }
+            } else {
+                setTimeout(function() {
+                    for (var i = 23; i >= 0; i--) {
+                        arr[i].style.left = (LEFT_SPACE + arr[i].pos.col * LEFT_IMG_SPACE) + "px";
+                        arr[i].style.top = (TOP_SPACE + arr[i].pos.row * TOP_IMG_SPACE) + "px";
+                        arr[i].style.transform = "rotate(" + (40 * Math.random() - 20) + "deg)";
+                        arr[i].style.transitionDelay = (NUM - i) * 100 + "ms";
+                    }
+                }, 0);
+            }
+        }
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
