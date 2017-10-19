@@ -6,24 +6,77 @@
 </head>
 <body>
 <script>
-  class User{
+
+    function User(){         //定义类开头字母大写
+//        this.aa = 'xx';
+    }                        //构造方法 ：每次new的时候都要调用一次构造方法
+    //为什么不把方法写在类里 ：因为带来消耗 每次都要执行一边say方法
+    //为什么不把属性写在原型里？
+    //User.prototype.aa  = 'zs';  //如果对象是基础类型没问题
+    User.prototype.aa  = {name:'zs',age:23};  //如果对象是引用类型，就会共享里面的属性
+
+
+    User.prototype.say = function(){
+
+    };
+
+    var u1 = new User();
+    u1.aa.name = 'lisi';
+    console.log(u1.aa);
+
+    var u2 = new User();
+    console.log(u2.aa);
+
+    //继承
+    function Son(){
+
+    }
+
+    Son.prototype = u1;
+
+    var s = new Son();
+    s.say();
+
+
+
+
+
+
+    class User{
       constructor(){
           this.aa = 'zs';
       }
       say(){
           console.log(this.aa);
       }
+        bb(){
+
+        }
   }
 
     var u = new User();
-  u.say();
+    u.say();
 
     class Son extends User{
         constructor(){
-//            super();
+//            super();  //继承了什么方法 要把super（）写在第一行 代表调用父元素的构造方法
             this.bb = 'lisi';
         }
     }
+
+
+    //static 修饰方法的
+
+    class User{
+        constructor(){
+            this.aa = 'zs';
+        }
+        static say(){
+            console.log(111111);
+        }
+    }
+
+    User.say(); //通过类调用
 
 
 

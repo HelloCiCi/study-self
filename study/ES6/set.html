@@ -6,12 +6,36 @@
 </head>
 <body>
 <script>
-    //set
+    //set 存储多个数据的数据结构
 
     var s = new Set();
     s.add(1);
     s.add(2);
     s.add(3);
+    s.add(3);   //里面不能存入重复值 引号3可以
+//    s.delete(3);
+//    s.clear();
+    s.size;
+
+//    arr.splice();  //只穿一个参数把数组从哪截断
+//    arr.splice(2,0,'lisi');  //从第二个开始一个不改 加一个lisi
+//    arr.splice(2,1,'lisi');  //从第二个开始改一个 改成lisi
+
+    var keys = s.keys();  //是一个迭代器
+    for(var k of keys){
+        console.log(k);  //循环每次的键值
+    }
+
+    var values = s.values();
+    for(var v of values){
+        console.log(v);
+    }
+
+    var entries = s.entries();  //分别输出健和值
+    for(var e of entries){
+        console.log(e);
+    }
+
 
 //    var entries = s.entries();
 //    for(var e of entries){

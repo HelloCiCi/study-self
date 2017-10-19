@@ -1,36 +1,37 @@
 #index-background{
-    background: url(../img/index-background.png);
-    height: 0px;
-    padding-top: 55%;
+    /*background: url(../img/index-background.png);*/
+    /*background-color: rgba(0, 0, 0, 0.33);*/
+    /*height: 0px;*/
+    /*padding-top: 55%;*/
     width: 100%;
-    position: relative;
     background-size: cover;
+    position: relative;
 }
 
 #nav{
+    position: absolute;
+    top: 0px;
     width: 100%;
-    height: 110px;
-    margin-bottom: 20px;
+    height: 64px;
+    /*background: red;*/
+    padding: 30px 0;
+    transition: all 1.3s linear;
+    transition-delay: 0.5s;
+    z-index: 100;
 }
 
 #nav ul{
-    position: absolute;
-    top: 0px;
-    right: 50px;
     width: 600px;
-    height: 74px;
-    /*background: red;*/
+    /*background: blue;*/
     float: right;
-    line-height: 74px;
-    padding: 30px 0px;
 }
 
 #nav ul li{
     float: left;
-    height: 74px;
+    height: 64px;
     width: 85px;
     text-align: center;
-    line-height: 74px;
+    line-height: 64px;
 }
 
 #nav ul li a{
@@ -39,21 +40,142 @@
     font-weight: bold;
 }
 
-.scroll-nav{
+#index-background .scroll-nav{
     position: fixed;
+    top:0px;
+    left: 0px;
     background: black;
+    line-height: 50px;
     height: 50px;
-    padding: 10px 0px;
     opacity: 0.6;
 }
 
-.scroll-a{
-    color: #fff;
+#index-background .scroll-li{
+    line-height: 50px;
+    height: 50px;
+
 }
 
-.scroll-ul{
-    padding: 10px 0px;
+#index-background .scroll-a{
+    color: #ffffff;
+    transition: all 1.3s linear;
+    transition-delay: 0.5s;
 }
+
+#Aboutme{
+    width: 100%;
+    height: 0px;
+    padding-top: 37.5%;
+    position: relative;
+}
+
+#middleme{
+    position: absolute;
+    top: 50%;
+    /*left: 100px;*/
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -42.5%;
+    width: 85%;
+    height: 400px;
+    /*background: blue;*/
+}
+
+#aboutleft{
+    border: dashed 3px indianred;
+    width: 33%;
+    height: 100%;
+    float: left;
+    border-radius: 50%;
+}
+
+#personalImg{
+    height: 375px;
+    width: 375px;
+    margin: 0 auto;
+    margin-top: 12px;
+    background: url("../img/personal.png");
+    background-size: cover;
+    border-radius: 50%;
+}
+
+#aboutright{
+    width: 60%;
+    float: right;
+}
+
+#aboutright h2{
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    margin: 35px 0 10px 0;
+    height: 45px;
+    line-height: 45px;
+    color: #333333;
+    /*background: red;*/
+    /*visibility: visible;*/
+    /*animation-duration: 2s;*/
+    /*animation-name: slideInDown;*/
+    font-weight: bold;
+    font-size: 35px;
+}
+
+#aboutright h2 a{
+    color: #f1d37d;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#yellow-splice{
+    width: 75px;
+    height: 2px;
+    background: #f1d37d;;
+    margin-bottom: 15px;
+}
+
+#aboutright h3{
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    margin: 20px 0px 10px 0px;
+
+}
+
+#aboutright p{
+    height: 84px;
+    margin-bottom: 10px;
+    width: 90%;
+    line-height: 2;
+    color: #333;
+    font-size: 14px;
+}
+
+#tubiao{
+    width: 100%;
+    height: 70px;
+}
+
+#aboutright .button{
+    display: inline-block;
+    padding: 10px 32px;
+    height: 23px;
+    text-align: center;
+    border: 1px #333333 solid;
+    transition: all 0.5s ease 0s;
+    font-size: 16px;
+    line-height: 1.42857143;
+    color: #333333;
+    cursor: pointer;
+    margin: 10px;
+    /*visibility: visible;*/
+    /*animation-duration: 1s;*/
+    /*animation-name: slideInUp;*/
+}
+
+#aboutright .button:hover{
+    background: #d9bf77;
+    border-color: #d9bf77;
+}
+
+
 
 @media(max-width: 768px){
 
