@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script src="jquery-1.11.2.js"></script>
+
+<script>
+    //$.get();  从客户端得到一些东西  不安全的 因为参数都在url里  传输数据大小小一些 请求的head里 会产生一些缓存
+    //$.post();    传到客户端一些  安全的 不可见的  传输数据大小大一些  请求的body里 不会产生缓存
+
+    //200不报错
+    //304当前读取是缓存文件
+
+    $.get('http://www.baidu.com',{
+                name:'lisi',
+                age:18
+    },function(res){
+        if(res){
+            console.log(1);
+        }else{
+            console.log(2);
+        }
+    },'json');
+
+    //ajax原理
+
+    //1.创建对象
+    //2.向服务器发送请求
+    //3.服务器的响应
+
+    //省 市 县 街道  promise实现
+
+    //iTerm
+    let p1 = new Promise((resolve,reject)=>{
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

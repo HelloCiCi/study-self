@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+let[a,b,c] = [1,2,3];
+let[a,b,[c],d] = [1,2,[3,4],5];
+let[a,b,[c,d]] = [1,2,[3],5];
+let[a,b,[c,d=0]] = [1,2,[3,4],5];
+//对象通过名字来对应 数组通过顺序来对应 字符串解构
+
+let{name, age} = {
+    age: 18,
+    name:'zhangsan'
+};
+
+    console.log(age,name);
+
+let{name:n, age:a} = {
+    age: 18,
+    name:'zhangsan'
+};
+
+console.log(n,a);
+
+    //不引入第三个变量换值
+    var a = 5;
+    var b = 6;
+    a = [b,b=a][0];
+    console.log(a,b);
+
+    var [a,b] = [b,a]
+    console,log(a,b);
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
