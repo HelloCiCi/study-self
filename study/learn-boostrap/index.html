@@ -1,3 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>.container</title>
+</head>
+<body>
+<!--col-xs-*  像素小于768px 移动端时 用这个网各类-->
+<!--col-sm-*  像素大于等于768px 平板电脑 用这个网各类-->
+<!--col-md-*  像素大于等于992px 一般尺寸的桌面电脑 用这个网各类-->
+<!--col-lg-*  像素大于等于1200px 大尺寸 用这个网各类-->
+
+<!--container居中显示  page-header div下面有一条线-->
+<!--row指的是新开辟一块空间 里面有12个网格-->
+<!--网格偏移 col-md-offset-6-->
+<!--想让这个东西只在特小设备上显示 visible-xs  只在特小设备上隐藏 hidden-xs-->
+<!--灰色的背景class = “navbar navbar-default”  class = "active" 像是被选中的背景-->
+<!--navbar-inverse 变成暗色背景  navbar-fixed-top 在顶部显示  navbar-stactic-top 随着页面的滚动而滚动-->
+<!--navbar-left 元素浮动到左边-->
+
+<!--控制按钮大小 btn-sm  按钮基本样式 btn-primary  添加合适的边距 navbar-btn-->
+<!--tabindex = "-1"  tab键-->
+
+<!--<div class = "container">-->
+
+        <!--<h1 class="page-header">主体</h1>-->
+        <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, impedit nesciunt beatae est possimus quos repellat cum cumque voluptate earum expedita minus error qui totam nam officia rem aliquam delectus.</p>-->
+<!--</div>-->
+
+<!--显示一个暗色背景-->
+<!--<div class = "modal in" style = "display: block">-->
+    <!--<div class = "modal-dialog">-->
+        <!--<div class = "modal-content">-->
+            <!--<div class = "modal-header">-->
+                <!--<button class = "close" >&times;</button>-->
+                <!--&lt;!&ndash;data-dismiss="modal"&ndash;&gt;-->
+                <!--<h4>用户登录</h4>-->
+            <!--</div>-->
+            <!--<div class = "modal-body">-->
+                <!--<p>用户登录的表单-->
+                <!--</p>-->
+            <!--</div>-->
+            <!--<div class = "modal-footer">-->
+                <!--<button class = "btn btn-primary">登录</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class = "modal-backdrop in"></div>-->
+
+
+<!--<form action = "" class = "navbar-form navbar-left">-->
+    <!--&lt;!&ndash;placeholder占位文字&ndash;&gt;-->
+    <!--<input type = "text" placeholder="搜索">-->
+    <!--<button type = "submit">-->
+        <!--&lt;!&ndash;小图标 glyphicon&ndash;&gt;-->
+        <!--<span class = "glyphicon glyphicon-search"></span>-->
+    <!--</button>-->
+<!--</form>-->
+
+<!--菜单响应式变三个横杠-->
+<!--<button class = "navbar-toggle" data-toggle = "collapse"  data-target="#resposive-navbar">-->
+    <!--<span class = "icon-bar"></span>-->
+    <!--<span class = "icon-bar"></span>-->
+    <!--<span class = "icon-bar"></span>-->
+<!--</button>-->
+
+
+<!--旋转木马-->
+<div class = "container">
+    <div class = "carousel slide" data-ride = "carousel">
+        <div class = "carousel-inner">
+            <div class="item active">
+                <img src = "../js/img/1.jpg" alt = "">
+            </div>
+            <div class="item">
+                <img src = "../js/img/2.jpg" alt = "">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="container">-->
+
+    <!--<div class="carousel slide" data-ride="carousel">-->
+        <!--<div class="carousel-inner">-->
+            <!--<div class="item active">-->
+                <!--<img src="../js/img/1.jpg" alt="">-->
+            <!--</div>-->
+            <!--<div class="item">-->
+                <!--<img src="../js/img/2.jpg" alt="">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+<!--</div>-->
+
+
+<!--小圆点幻灯片播放-->
+<!--<ol class = "carousel-indicators">-->
+    <!--<li data-target = "div外的id" data-slide-to = "0" class = "active"></li>-->
+    <!--<li data-target = "div外的id" data-slide-to = "1"></li>-->
+<!--</ol>-->
+
+
+<!--    幻灯片上加内容-->
+<!--<div class = "carousel-caption">-->
+    <!--<h1>hahaha</h1>-->
+    <!--<p>11112211snddiwdiwhidhihwihihihihihihihi</p>-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+//    $(function(){}
+//            $('#login-modal').modal('show');
+//            $('#login-modal').modal('hide');
+//            $('#login-modal').modal('toggle');
+//    );
+
+$(function(){
+    $('document').on('keydown',function(e){
+        console.log(e.which);
+        switch(e.which){
+            case 37;
+                $('#sildeshow').carousel('next');
+                break;
+            case 39;
+                $('#sildeshow').carousel('prev');
+                break;
+        }
+    });
+});
+<!--键盘控制幻灯片播放前后-->
+//   设置为 pause  就不会自动播放了 表示暂停播放幻灯片的方式 默认样式是hover表示鼠标悬停的时候幻灯片会停下
+//interval 表示播放幻灯片两张的时间间隔 默认是 5000ms
+//    data-wrap:false;表示播放到最后一张幻灯片的时候，不会从第一张开始，直接到头 设置为true表示循环播放
+
+
+
+</script>
+
+
+
+<script src="lib/jquery-2.1.1.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--<!DOCTYPE html>-->
 <!--<html lang="zh-hans">-->
 <!--<head>-->
@@ -9,58 +184,15 @@
     <!--<title>.container</title>-->
 <!--</head>-->
 <!--<body>-->
-<!--&lt;!&ndash;col-xs-*  像素小于768px 移动端时 用这个网各类&ndash;&gt;-->
-<!--&lt;!&ndash;col-sm-*  像素大于等于768px 平板电脑 用这个网各类&ndash;&gt;-->
-<!--&lt;!&ndash;col-md-*  像素大于等于992px 一般尺寸的桌面电脑 用这个网各类&ndash;&gt;-->
-<!--&lt;!&ndash;col-lg-*  像素大于等于1200px 大尺寸 用这个网各类&ndash;&gt;-->
 
-<!--&lt;!&ndash;container居中显示  page-header div下面有一条线&ndash;&gt;-->
-<!--&lt;!&ndash;row指的是新开辟一块空间 里面有12个网格&ndash;&gt;-->
-<!--&lt;!&ndash;网格偏移 col-md-offset-6&ndash;&gt;-->
-<!--&lt;!&ndash;想让这个东西只在特小设备上显示 visible-xs  只在特小设备上隐藏 hidden-xs&ndash;&gt;-->
-<!--&lt;!&ndash;灰色的背景class = “navbar navbar-default”  class = "active" 像是被选中的背景&ndash;&gt;-->
-<!--&lt;!&ndash;navbar-inverse 变成暗色背景  navbar-fixed-top 在顶部显示  navbar-stactic-top 随着页面的滚动而滚动&ndash;&gt;-->
-<!--&lt;!&ndash;navbar-left 元素浮动到左边&ndash;&gt;-->
-<!--<div class = "container">-->
-        <!--<h1 class="page-header">主体</h1>-->
-        <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, impedit nesciunt beatae est possimus quos repellat cum cumque voluptate earum expedita minus error qui totam nam officia rem aliquam delectus.</p>-->
+
+<!--<div class="container">-->
+    <!--<h1 class="page-header">主体</h1>-->
+    <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, impedit nesciunt beatae est possimus quos repellat cum cumque voluptate earum expedita minus error qui totam nam officia rem aliquam delectus.</p>-->
 <!--</div>-->
-
-<!--&lt;!&ndash;<form action = "" class = "navbar-form navbar-left">&ndash;&gt;-->
-    <!--&lt;!&ndash;&lt;!&ndash;placeholder占位文字&ndash;&gt;&ndash;&gt;-->
-    <!--&lt;!&ndash;<input type = "text" placeholder="搜索">&ndash;&gt;-->
-    <!--&lt;!&ndash;<button type = "submit">&ndash;&gt;-->
-        <!--&lt;!&ndash;&lt;!&ndash;小图标 glyphicon&ndash;&gt;&ndash;&gt;-->
-        <!--&lt;!&ndash;<span class = "glyphicon glyphicon-search"></span>&ndash;&gt;-->
-    <!--&lt;!&ndash;</button>&ndash;&gt;-->
-<!--&lt;!&ndash;</form>&ndash;&gt;-->
-
 
 
 <!--<script src="lib/jquery-2.1.1.min.js"></script>-->
 <!--<script src="lib/bootstrap/js/bootstrap.min.js"></script>-->
 <!--</body>-->
 <!--</html>-->
-<!doctype html>
-<html lang="zh-hans">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>.container</title>
-</head>
-<body>
-
-
-<div class="container">
-    <h1 class="page-header">主体</h1>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, impedit nesciunt beatae est possimus quos repellat cum cumque voluptate earum expedita minus error qui totam nam officia rem aliquam delectus.</p>
-</div>
-
-
-<script src="lib/jquery-2.1.1.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
