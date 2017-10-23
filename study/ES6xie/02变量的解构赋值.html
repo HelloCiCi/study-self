@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<script>
+//    数组的解构赋值 通过顺序对应
+
+//    let arr = [1,2,3];
+//    let [a,b,c] = [1,2,3];
+//    console.log(a,b,c);
+
+//let [a,b,[c,d],e] = [1,2,[3,4],5];
+//console.log(a,b,c,d,e);
+
+//只输出第一个
+//    let [a,b,[c],e] = [1,2,[3,4],5];
+//    console.log(a,b,c,e);
+
+//    可以设置默认值
+//let [a,b,[c,d= 4],e] = [1,2,[3],5];
+//console.log(a,b,c,d,e);
+
+//    变形
+//    function(){
+//        console.log(123);
+//    }
+//
+//    let[a = foo()] = [1];  //不能输出123
+
+
+
+
+
+//    对象解构 通过名称来赋值
+//    let obj = {
+//        name:'zhangsan',
+//        age:18
+//    };
+//
+//    let {name,age} = obj;
+    //let {name:name1,age:age1} = obj; //起别的名字 下面就可以对应
+
+//    console.log(name,age);
+
+
+
+
+
+//    字符串解构
+//    let str = 'hello';
+//    let[a,b,c,d,e] = str;
+//    console.log(a,b,c,d,e);
+
+
+
+
+
+
+//        函数的参数赋值
+
+//    function add([x,y]){
+//        console.log(x+y);
+//    }
+//
+//    let arr = [5,6];
+//    add(arr);
+
+//    function foo({name, age, school = 'XXdaxue'}){
+//        console.log(name,age,school);
+//    }
+//
+//    let obj = {
+//        name:'haha',
+//        age:18,
+//    };
+//
+//    foo(obj);
+
+
+//    function foo(){
+//        let arr = ['a','b','c'];
+//    }
+
+
+
+
+
+//    互换变量
+//    let a = 5;
+//    let b = 6;
+
+//    a = a+b;//a =11
+//    b = a-b;//b =5
+//    a = a - b;//a =6
+
+//    a = [b,b = a][0];
+//    var[a,b] = [b,a];  //解构
+//
+//    console.log(a,b);
+
+
+
+
+//    json应用   是一种数据格式 本身是字符串
+//parse用于从一个字符串中解析出json对象,如
+
+//    let json = '{"a":"hello","b":"world"}';
+//    let obj = JSON.parse(json);
+//    let{a,b} = obj;
+//    console.log(obj);
+//    console.log(a,b);
+
+//stringify()用于从一个对象解析出字符串，如
+
+//    var ab = {a:1,b:2};
+//    var string = JSON.stringify(ab);
+//    let [a,b]= [string[5],string[11]];
+////    var arr = [];
+////     arr.push(string[5],string[11]);
+////
+////    console.log(arr);
+//    console.log(a,b);
+//    console.log(string);
+
+
+
+//    解构时 有初始值 就要加个小括号
+//    let a = 2;
+//    ({a} = {a:1});
+//    console.log(a);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+<body>
+
+</body>
+</html>

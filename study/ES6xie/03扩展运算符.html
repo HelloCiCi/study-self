@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div>11</div>
+<div>22</div>
+<div>33</div>
+    <script>
+//        扩展运算符...
+
+//        function foo(){
+//            console.log(arguments[0],arguments[1]);
+//        }
+//        foo(5,6);
+
+//        改进
+//        function foo(...arg){
+//            //console.log(arguments[0],arguments[1]);
+//            console.log(arg);
+//        }
+//        foo(5,6,7);
+
+//数组插入
+//        let arr1 = [1,2];
+//        let arr2 = [3,...arr1,4];
+//
+//        console.log(arr2);
+
+
+//        let arr1 = [1,2,3,4];
+//        let arr2 = [...arr1];  //开辟了一块独立的内存空间
+//        console.log(arr1);
+//        arr1.push(5);
+//        console.log(arr2);
+
+//        连接两个数组
+
+//        let arr1 = [1,2,3];
+//        let arr2 = [3,4];
+//
+//        let arr3 = [...arr1,...arr2];
+//        let arr4 = arr1.concat(arr2);
+//
+//        console.log(arr3);
+//        console.log(arr4);
+
+
+//        对象合并
+//        function foo(...arg){
+//            console.log(arg);
+//        }
+//
+//        let obj1 = {
+//            name:'zhangsan',
+//            age: 18
+//        };
+//
+//        let obj2 = {
+//            name:'lisi',
+//            age: 19
+//        };
+//
+//        foo(obj1,obj2);
+//        console.log(foo);
+//
+//        let obj3 = {...obj1,...obj2};  //会把前面的值覆盖掉
+//        console.log(obj3);
+//        console.log(Object.assign(obj1,obj2));
+
+
+//        let aDiv = document.querySelectorAll("div");
+//        console.log(aDiv.constructor);  //看是不是数组 NodeList  是数组的话输出array
+//        //看他是不是数组 就看他能不能.push
+//        parameter  参数
+
+//        剩余运算符 必须放在最后传
+            function foo(a,b,...arg){
+                console.log(a,b,arg);
+            }
+        foo(5,6,7,8,9);
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
