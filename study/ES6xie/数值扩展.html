@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //数值扩展 number
+//    引用对象在堆内存里 基本对象在栈内存里  深拷贝是两个独立的内存空间 浅拷贝指向同一个内存空间
+
+//    let num1 = 5;
+//    console.log(num1.toString(2));  //转化为2进制的数；
+//
+//    let num2 = 101;
+//    console.log(parseInt(num2,2)); //二进制转化为10进制；
+//
+//    let num3 = 0B0101;  //0b表示他是一个二进制的数
+//    console.log(num3);
+//
+//    let num4 = 0O666;  //0o表示他是一个八进制的数
+//    console.log(num4);
+
+
+    //判断是否为数字  Number.isFinite(); 返回boolean值
+//    console.log(Number.isFinite(5));
+//    console.log(Number.isFinite('5'));
+//    console.log(Number.isFinite(NaN));
+//    console.log(Number.isFinite(undefined));
+//    console.log(Number.isFinite(5/0));
+
+
+//    方法被移植到Number上面，行为保持不变，目的是，逐步减少全局性方法，使语言逐渐模块化
+//    console.log(Number.isNaN(NaN));
+
+
+//判断是不是一个整型
+//    console.log(Number.isInteger(5));
+//    console.log(Number.isInteger(5.5));
+
+
+//    console.log(Number.parseInt(5.5)); //不是四舍五入 直接取整
+//    console.log(Number.parseFloat(5));
+
+//    let max = Math.pow(2,53)
+//    console.log(max-1);  //安全边界
+//    console.log(Number.isSafeInteger(5));  //判断这个数安不安全
+//    console.log(Number.MAX_SAFE_INTEGER);
+//    console.log(Number.MIN_SAFE_INTEGER);
+
+
+//        console.log(Math.trunc(5.5));//去除一个数的小数部分
+//        console.log(Math.sign(5));//正数返回1 0返回0 负数返回-1；
+
+
+
+</script>
+
+</body>
+</html>

@@ -25,11 +25,11 @@
 <!--控制按钮大小 btn-sm  按钮基本样式 btn-primary  添加合适的边距 navbar-btn-->
 <!--tabindex = "-1"  tab键-->
 
-<!--<div class = "container">-->
+<div class = "container-fluid">
 
-        <!--<h1 class="page-header">主体</h1>-->
-        <!--<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, impedit nesciunt beatae est possimus quos repellat cum cumque voluptate earum expedita minus error qui totam nam officia rem aliquam delectus.</p>-->
-<!--</div>-->
+        <h1 class="page-header">主体</h1>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, impedit nesciunt beatae est possimus quos repellat cum cumque voluptate earum expedita minus error qui totam nam officia rem aliquam delectus.</p>
+</div>
 
 <!--显示一个暗色背景-->
 <!--<div class = "modal in" style = "display: block">-->
@@ -71,18 +71,18 @@
 
 
 <!--旋转木马-->
-<div class = "container">
-    <div class = "carousel slide" data-ride = "carousel">
-        <div class = "carousel-inner">
-            <div class="item active">
-                <img src = "../js/img/1.jpg" alt = "">
-            </div>
-            <div class="item">
-                <img src = "../js/img/2.jpg" alt = "">
-            </div>
-        </div>
-    </div>
-</div>
+<!--<div class = "container">-->
+    <!--<div class = "carousel slide" data-ride = "carousel">-->
+        <!--<div class = "carousel-inner">-->
+            <!--<div class="item active">-->
+                <!--<img src = "../js/img/1.jpg" alt = "">-->
+            <!--</div>-->
+            <!--<div class="item">-->
+                <!--<img src = "../js/img/2.jpg" alt = "">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 <!--<div class="container">-->
 
@@ -131,20 +131,20 @@
 //            $('#login-modal').modal('hide');
 //            $('#login-modal').modal('toggle');
 //    );
-
-$(function(){
-    $('document').on('keydown',function(e){
-        console.log(e.which);
-        switch(e.which){
-            case 37;
-                $('#sildeshow').carousel('next');
-                break;
-            case 39;
-                $('#sildeshow').carousel('prev');
-                break;
-        }
-    });
-});
+//
+//$(function(){
+//    $('document').on('keydown',function(e){
+//        console.log(e.which);
+//        switch(e.which){
+//            case 37;
+//                $('#sildeshow').carousel('next');
+//                break;
+//            case 39;
+//                $('#sildeshow').carousel('prev');
+//                break;
+//        }
+//    });
+//});
 <!--键盘控制幻灯片播放前后-->
 //   设置为 pause  就不会自动播放了 表示暂停播放幻灯片的方式 默认样式是hover表示鼠标悬停的时候幻灯片会停下
 //interval 表示播放幻灯片两张的时间间隔 默认是 5000ms
