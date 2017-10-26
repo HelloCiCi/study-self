@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function add(x,y){
+        y = y||0;
+//        return x + y;
+        return `${x}+${y}`;
+    }
+
+
+    //空字符串是flase
+//    console.log(add(5,''));
+    console.log(add('hello','world'));
+
+    function add(x=0,y=0){
+        return x+y;
+    }
+
+    add(5,6);
+    console.log(add.length);//add。length函数没有默认值的参数的个数  ；
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <!--监听dom值-->
+    <!--<input type = "text" v-model = "msg">-->
+
+    <!--<button v-on:click = "fn">click</button>-->
+    <!--简写形式-->
+    <!--<button @click = "fn">click</button>-->
+    <!--<button @click = "fn($event)">click</button>-->
+
+
+    <!--<button @click = "fn()">点我加1</button>-->
+    <!--<button @click = "msg++">click</button>-->
+    <!--当前点击次数：{{msg}}-->
+
+
+    <!--解析标签-->
+    <!--当前点击次数：<span v-html = "msg"></span>-->
+    <!--当前点击次数：<span v-text = "msg"></span>-->
+
+
+</div>
+<script src = "vue.js"></script>
+    <script>
+        //IE9以上 才能用vue
+        //时刻在监控data里面的数据
+//        var vm = new Vue({
+//            el:'#app',       //作用域
+//            data:{
+//                msg:'这里的数值会不断加1'
+//            },
+//            methods:{
+//                fn:function(){
+//                    alert(event.target);
+//                }
+//            }
+//        });
+
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg:0
+            },
+            methods:{
+//                fn:function(){
+//                    vm.msg++;
+//                }
+            }
+        });
+
+
+
+
+//
+//        var obj = {};
+//
+//        Object.defineProperty(obj,'name',{
+//            set:function(val){
+//                console.log(val);
+//            }
+//        })
+//        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

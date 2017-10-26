@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .font{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "app">
+        <!--动态绑定属性的指令-->
+        <!--<p v-bind:id = "aa">pppp</p>-->
+        <!--简写-->
+        <!--<p :id = "aa">pppp</p>-->
+        <!--class style-->
+        <div :class = "{red:isRed,font:isFont}">dddddd</div>
+        <!--<div :class = "classObj">dddddd</div>-->
+        <!--<div :class = "[classA,classB]">ddddddddd</div>-->
+    </div>
+
+
+
+    <script src="vue.js"></script>
+    <script>
+
+        var vm = new Vue({
+            el:"#app",
+            data:{
+                aa:'id1',
+                isRed:false,
+                isFont:true,
+                classObj:{
+                    red:true,
+                    font:false
+                },
+                classA:'red',
+                classB:'font'
+            },
+            methods:{
+            }
+        })
+
+</script>
+</body>
+</html>

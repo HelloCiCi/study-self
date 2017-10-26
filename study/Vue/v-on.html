@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id = "app">
+        <input type = "type" @keyup.65 = "fn">
+
+        <!--按住shift同时再按别的键子-->
+        <input type = "type" @keyup.shift = "fn">
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        methods:{
+            fn:function(){
+                console.log(event.target.value);
+            }
+        }
+    });
+
+    </script>
+
+</body>
+</html>
