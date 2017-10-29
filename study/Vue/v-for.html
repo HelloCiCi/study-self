@@ -5,6 +5,41 @@
     <title></title>
 </head>
 <body>
+<div id="app">
+    <ul>
+        <li v-for = "(val,index) in arr">
+            {{val}}
+
+            <!--val是属性的值-->
+            <!--index是索引-->
+        </li>
+        <!--<li v-for = "(c,b,a) in arr">-->
+            <!--{{c}},{{b}},{{a}}-->
+        <!--</li>-->
+    </ul>
+</div>
+
+<script src="vue.js"></script>
+<script>
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+//          arr:{
+//              name:"zhangsan",
+//              age:15,
+//              school:"heida"
+//          }
+            arr:[1,2,3,4,5]
+        },
+    });
+
+
+
+
+
+
+</script>
 
 </body>
 </html>

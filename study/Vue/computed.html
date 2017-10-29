@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--计算属性有缓存功能-->
+<div id="app">
+
+</div>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            firstName:"zhang",
+            lastName:"san"
+        },
+        computed:{
+            fullName:{
+                get:function(){
+                    return this.firstName + ' '+this.lastName;
+                },
+                set:function(val){
+                    //zhang si
+                    var arr = val.split(' ');
+                    this.firstName = arr[0];
+                    this.lastName = arr[1];
+                }
+            }
+        }
+//        methods:{
+//            fullName(){
+//            return this.firstName + ' '+this.lastName;
+//            }
+//        }
+
+    });
+
+    vm.$watch('firstName',function(val,oldVal)){
+        console.log(val+"......"+oldVal);
+        if(oldVal == 'zhang'){
+            this.fistName = oldVal;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

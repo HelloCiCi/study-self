@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <!--v-if 把代码直接干掉-->
+    <!--v-show 设置display：none；如果想要频繁切换-->
+    <!--v-else 必须跟在if后面-->
+    <h1 v-if = "show == 2">
+        hhhhhhh
+    </h1>
+    <h2 v-else = "show == 3">
+        pppppppp
+    </h2>
+    <!--<h1 v-if = "show">-->
+       <!--hhhhhhh-->
+    <!--</h1>-->
+    <!--<h2 v-else>-->
+        <!--pppppppp-->
+    <!--</h2>-->
+
+
+
+    <!--<template v-show = "show">-->
+        <!--<h1>hhhhh</h1>-->
+        <!--<h2>pppppp</h2>-->
+        <!--<h3>kkkkkkk</h3>-->
+    <!--</template>-->
+</div>
+
+<script src="vue.js"></script>
+<script>
+
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            show:true
+        }
+    });
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

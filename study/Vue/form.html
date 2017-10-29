@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id = "app">
+        <form>
+            <input type = "text" v-model = "msg">
+            <input type = "password" v-model = "word">
+            <input type = "email" v-model = "email">
+            <input type = "radio" v-model = "sex" value = "n">男
+            <input type = "radio" v-model = "sex" value = "v">女
+            <input type="checkbox" v-model = "school" value="黑大">黑大
+            <input type="checkbox" v-model = "school" value="林大">林大
+            <input type="checkbox" v-model = "school" value="理工">理工
+            <select name = "" v-model = "sport">
+                <option value = "足球">足球</option>
+                <option value = "篮球">篮球</option>
+                <option value = "乒乓球">乒乓球</option>
+            </select>
+
+
+        </form>
+
+
+    </div>
+<script src = "vue.js"></script>
+<script>
+    //让谁默认 就让谁的值和value一样
+
+    var vm  = new Vue({
+        el:"#app",
+        data:{
+            msg:"高羽昕",
+            word:"sssss",
+            email:"@qq.com",
+            sex:"n",
+            school:[],
+            sport:''
+        }
+    });
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
