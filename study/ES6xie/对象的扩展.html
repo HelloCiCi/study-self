@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    let name = 'zhangsan';
+    let age = 18
+
+    let obj2 = {
+        name,
+        age
+    };
+    console.log(obj2);
+
+    Object.is(4,'4');   //相当于===
+    Object.is(+0,'-0');   //false
+    Object.is(NaN,'NaN');   //true
+
+
+    let obj5 = {
+        name:'zs',
+        age:18
+    };
+    let obj6 = {
+        name:'zs',
+        age:18
+    };
+
+    var obj7 = obj5;
+    console.log(obj5==obj6);  //false
+    console.log(Object.is(obj5,obj6));  //false
+    console.log(Object.is(obj5,obj7));  //true
+
+
+    //对象的合并
+
+//    let obj8 = {
+//        name:'zs',
+//        age:18
+//    };
+//
+    let obj9 = {
+        school:'heida',
+        brother:{
+            name:'xx'
+        }
+    };
+//
+//    console.log(Object.assign(obj8,obj9));  //网第一个对象去合并相当于extend  浅拷贝
+
+//    console.log('name' in obj10);  //判断有没有这个属性
+
+//    let arr = [1,2,3];
+//    console.log(1 in arr);  //判断在这个索引下有没有值
+
+
+
+</script>
+
+</body>
+</html>
