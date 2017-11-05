@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model = "msg" @keyUp = "search">
+    <button @click = "add">add</button>
+    <ul>
+        <li v-for = "obj in showArr" @click = "click(obj)" :class = "{red:obj.active}">
+            {{obj.val}}
+        </li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            msg:'',
+            arr:[],
+            showArr:[]
+        },
+        methods:{
+            add(){
+                this.arr.push({val:this.msg,active:false});
+                this.msg = '';
+                this.arr.sort(function(a,b){
+                   return a.val> b.val;
+                });
+                this.showArr = this.arr;
+
+            },
+            click(obj){
+                obj.active = !obj.active;
+            },
+            search(){
+//                for(var i = 0;i < this.arr.length;i++){
+//                    if(this.arr[i].indexOf(this.msg)){
+//                        this.showArr.push(this.arr[i]);
+//                    }
+//                }
+                var filterArr = this.arr.filter((obj)=>{
+                    return obj.val.includes(this.msg);
+                });
+                    this.showArr = filterArr;
+            }
+        }
+
+
+
+    });
+
+
+
+
+
+
+</script>
+</body>
+</html>

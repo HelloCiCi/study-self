@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="app">
+    <!--<input type="text" id = "inp" v-model = "msg">-->
+    <!--{{msg}}-->
+</div>
+<script src = "vue.js"></script>
+<script>
+//    var obj = {};
+//    Object.defineProperty(obj,'name',{
+//        set:function(val){
+//            document.getElementById('inp').value = val;
+//        }
+//    })
+
+//    var vm = new Vue({
+//        el:"#app",
+//        data:{
+//            msg:'aaa'
+//        }
+//    });
+
+    function v(obj){
+        for(var p in obj){
+            if(p == 'el'){
+              this['$'+p] = document.querySelector(obj[p]);
+            }else if(p == 'data'){
+                this['$'+ p] = obj[p];
+                for(var q in obj[p]){
+                    this[q] = obj[p][q];
+                }
+            }
+        }
+    }
+
+    var v = new v({
+        el:"#app",
+        data:{
+            msg:'aaa'
+        }
+    })
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
