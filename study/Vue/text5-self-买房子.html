@@ -5,6 +5,59 @@
     <title></title>
 </head>
 <body>
+<div id="app">
+    是否需要付费设施 ：<input type="checkbox" v-model = "show" value="" @click = "click">
+    <ul>
+        <li v-for = "obj in arr">
+            {{obj.name}}{{obj.price}}
+            <input type="checkbox" v-model = "arr1" :value = "obj">
+        </li>
+    </ul>
+    订单费用信息
+    <ul>
+        <li v-for = "obj in arr1">
+            {{obj.name}}{{obj.price}}
+        </li>
+    </ul>
+    总金额:{{sum}}
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            show:"",
+//            show:f alse
+            arr:[],
+            arr1:[{name:"群里豪华花园",price:400}],
+        },
+        methods:{
+            click(){
+                if(!this.show){
+                    this.arr = [
+                        {name:"沙发",price:100},
+                        {name:"床",price:200},
+                        {name:"wifi",price:20}
+                    ]
+                }else{
+                    this.arr=  [];
+                    this.arr1.splice(1);
+                }
+            }
+        },
+            computed:{
+                sum:function(){
+                    var total = 0;
+                    this.arr1.forEach(function(obj){
+                        total += obj.price;
+                    })
+                    return total;
+                }
+            }
 
+    });
+
+
+</script>
 </body>
 </html>
