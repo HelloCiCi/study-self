@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--如果要添加动态的属性，因为是个变量，不是字符串，所以加v-bind属性-->
+<div id="app">
+    <!--<demo1 :msg-a = "k" msg-c = "cccc"></demo1>-->
+    <!--<demo1 :msg-a = "l"></demo1>-->
+
+    <!--当想实现aaa上下两个值可以更改，用demo1替换了slot-->
+    <demo1>
+        <p slot="title1">pppppp</p>
+        <h1 slot="title2">hhhhh</h1>
+    </demo1>
+    <demo1></demo1>
+</div>
+<!--<div id="app2"></div>-->
+
+<script src="vue.js"></script>
+<script type = "text/x-template" id="temp">
+    <div>
+        <slot name = "title1">
+            <h1>我是默认值</h1>
+            2mk2m2
+            222
+        </slot>
+    aaaaaaaaa
+        <slot name = "title2">
+            <h1>我是默认值</h1>
+            11
+        </slot>
+    </div>
+</script>
+<script>
+    //全局
+//    Vue.component('demo',{
+//        template:'<div><h1>hhhhhh</h1><p>hhhhh</p></div>'
+//    });
+
+    new Vue({
+        el:"#app",
+        data:{
+            k:"aaaa",
+            l:"bbbb"
+        },
+        components:{
+            demo1:{
+                template:'#temp',
+                props:['msgA','msgC']
+            }
+        }
+    });
+
+//    new Vue({
+//        el:"#app2"
+//    });
+
+
+
+</script>
+</body>
+</html>
