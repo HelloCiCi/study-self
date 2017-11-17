@@ -1,0 +1,17 @@
+#div{
+    background: red;
+}
+
+#div2{
+    width: 200px;
+    height: 200px;
+    background: url(../img/1.jpg) no-repeat;
+}
+
+#div3{
+    transform: translate(50%,50%);
+}
+
+#aa{
+    background: palevioletred;
+}
