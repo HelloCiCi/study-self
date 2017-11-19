@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #mydialog{
+            width: 300px;
+            height: 200px;
+            background: #ccc;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        #title{
+            background: pink;
+        }
+
+        #title .closeIt{
+            float:right;
+        }
+    </style>
+</head>
+<body>
+<div id = "app">
+    <button @click = "Loginshow = true">登录</button>
+    <button @click = "Resshow = true">注册</button>
+    <mydialog v-show = "Loginshow"  @close = "Loginshow = false">
+        <span slot = "name1">
+            姓名:<input type="text"></br>
+            密码:<input type="password">
+        </span>
+        <div slot = "content1">内容内容内容</div>
+    </mydialog>
+    <mydialog v-show = "Resshow" @close = "Resshow = false">
+        <span slot = "name1">
+            姓名:<input type="text"></br>
+            密码:<input type="password">
+        </span>
+        <div slot = "content1">内容内容内容</div>
+    </mydialog>
+</div>
+
+
+<script src = "vue.js"></script>
+<script type = "text/x-template" id = "dialog">
+    <div id = "mydialog">
+        <div id = "title">
+            <slot name = "name1">name</slot>
+            <span class = "closeIt" @click = "$emit('close')" >[*]</span>
+        </div>
+        <slot name = "content1">
+            content
+        </slot>
+    </div>
+
+</script>
+
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            Loginshow:false,
+            Resshow:false
+        },
+        components:{
+            mydialog:{
+                template:"#dialog"
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
