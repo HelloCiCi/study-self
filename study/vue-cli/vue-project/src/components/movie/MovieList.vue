@@ -1,13 +1,13 @@
 <template>
   <div class="Top250">
     <div class= "img">
-      <img src="../../assets/logo.png">
+      <img :src = "img">
     </div>
    <div class = "intru">
      <span>{{title}}</span>
      <p>
-       <span>{{des}}</span>
-       ({{year}}) ({{sor}})
+       <span v-for = "a in des">{{a}}</span>
+       ({{year}}) (平均{{sor}}分)
      </p>
    </div>
   </div>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  props:['title','des','year','sor'],
+  props:['title','des','year','sor','img'],
   data () {
     return {
      
@@ -30,9 +30,10 @@ export default {
     height: 1rem;
     padding: 10px 10px 0px 10px;
   }
-  .img{
+  .img img{
       float: left;
-      width: 1rem;
+      width: 0.8rem;
+      height: 1rem;
       vertical-align: bottom;
       
   }
