@@ -6,8 +6,8 @@
    <div class = "intru">
      <span>{{title}}</span>
      <p>
-       <span v-for = "a in des">{{a}}</span>
-       ({{year}}) (平均{{sor}}分)
+       <span>{{des}}</span>
+       (平均{{sor}}分)
      </p>
    </div>
   </div>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  props:['title','des','year','sor','img'],
+  props:['title','des','sor','img'],
   data () {
     return {
      
