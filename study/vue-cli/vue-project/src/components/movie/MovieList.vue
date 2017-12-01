@@ -33,7 +33,7 @@ export default {
   .img img{
       float: left;
       width: 0.8rem;
-      height: 1rem;
+      height: 0.9rem;
       vertical-align: bottom;
       
   }
