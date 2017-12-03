@@ -1,6 +1,7 @@
 <template>
   <div class="music">
    <Common-header title = "Music" bgcolor = "rgb(0, 150, 136)"></Common-header>
+   <router-view></router-view>
    <common-footer bgcolor = "rgb(0, 150, 136)"></common-footer>
   </div>
 </template>
@@ -14,6 +15,7 @@ export default {
      
     }
   },
+  
   components:{
     CommonHeader,
     CommonFooter
