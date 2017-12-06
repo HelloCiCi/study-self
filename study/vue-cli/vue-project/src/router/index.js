@@ -33,7 +33,7 @@ export default new Router({
       component:Music,
       children:[
         {path:'/music/musicImg',component:MusicImg},
-        {path:'/music/musicPlayer',component:MusicPlayer}
+        {path:'/music/musicPlayer/:id',component:MusicPlayer}
       ]
     },
     {

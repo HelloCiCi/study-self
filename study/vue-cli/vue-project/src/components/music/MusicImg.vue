@@ -1,8 +1,10 @@
 <template>
   <div class="music">
     <ul class = "musicImg">
-      <li v-for = "(obj,index) in musiclist" :key = 'index'>
+      <li v-for = "obj in musiclist" :key = 'obj.id'>
+        <router-link :to = "'/music/musicPlayer/'+ obj.id">
         <img :src = "obj.bg" alt="">
+        </router-link>
       </li>
     </ul>
   </div>
