@@ -1,6 +1,8 @@
 <template>
   <div class="header">
-    <Common-header title = "Movie" bgcolor = "rgb(33, 150, 243)"></Common-header>
+    <Common-header title = "Movie" bgcolor = "rgb(33, 150, 243)" nav = "首页">
+      <button>首页</button>
+    </Common-header>
     <Movie-nav></Movie-nav>
    <router-view></router-view> 
     <Common-footer bgcolor = "rgb(33, 150, 243)"></Common-footer>
