@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div{
+            width: 300px;
+            height: 300px;
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="div">233</div>
+<script>
+    //addEventListener函数
+    var oDiv1 = document.getElementById('div');
+//    var fn = function(){
+//        alert(1);
+//    };
+//    oDiv1.addEventListener('click',fn,false);
+//
+//    oDiv1.removeEventListener('click',fn,false);
+//    oDiv1.addEventListener('click',function(){
+//        alert(2);
+//    },true);
+
+
+
+
+    function addEvent(elem,type,handler){
+        if(elem.addEventListener){
+            elem.addEventListener(type,handler,false);
+        }else if(elem.attachEvent){
+            elem.attachEvent('on' + type,function(){
+                handler.call(elem);
+            });
+        }
+    }
+
+    function removeEvent(elem,type,handler){
+        if(elem.removeEventListener){
+            elem.removeEventListener(type,handler,false);
+        }else if(elem.detachEvent){
+            elem.detachEvent('on'+type,function(){
+                handler.call(elem);
+            });
+        }
+    }
+
+
+//    addEvent(oDiv1,'click',function(){
+//        console.log(this.innerHTML);
+//    });
+
+    var fn = function(){
+        alert(2);
+    };
+
+    addEvent(oDiv1,'click',fn);
+
+    removeEvent(oDiv1,'click',fn);
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
