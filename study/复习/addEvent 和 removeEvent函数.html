@@ -33,9 +33,10 @@
         if(elem.addEventListener){
             elem.addEventListener(type,handler,false);
         }else if(elem.attachEvent){
-            elem.attachEvent('on' + type,function(){
+            elem[type+handler] = function(){
                 handler.call(elem);
-            });
+            };
+            elem.attachEvent('on' + type,elem.fn);
         }
     }
 
@@ -43,9 +44,7 @@
         if(elem.removeEventListener){
             elem.removeEventListener(type,handler,false);
         }else if(elem.detachEvent){
-            elem.detachEvent('on'+type,function(){
-                handler.call(elem);
-            });
+            elem.detachEvent('on'+type,elem.fn);
         }
     }
 
@@ -53,14 +52,27 @@
 //    addEvent(oDiv1,'click',function(){
 //        console.log(this.innerHTML);
 //    });
+//
+//    var fn = function(){
+//        alert(2);
+//    };
+//
+//    addEvent(oDiv1,'click',fn);
+//
+//    removeEvent(oDiv1,'click',fn);
 
-    var fn = function(){
-        alert(2);
+    var fn1 = function(){
+        console.log(1);
+    };
+    var fn2 = function(){
+        console.log(2);
     };
 
-    addEvent(oDiv1,'click',fn);
+    addEvent(oDiv1,'click',fn1);
+    addEvent(oDiv1,'click',fn2);
+    removeEvent(oDiv1,'click',fn1);
+    removeEvent(oDiv1,'click',fn2);
 
-    removeEvent(oDiv1,'click',fn);
 
 
 
