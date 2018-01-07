@@ -26,7 +26,7 @@
     //3.服务器回调
     xmlHttp.onreadystatechange = function(){
         if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
-            return responseText;
+            xmlHttp.responseText;
         }
     };
 
