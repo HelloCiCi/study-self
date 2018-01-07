@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //1.创建XMLHttpRequest对象
+   var xmlHttp;
+    if(window.XMLHttpRequest){
+        xmlHttp = new XMLHttpRequest();
+    }else{
+        xmlHttp = new ActiveObject("Microsoft.XMLHttp");
+    }
+
+
+
+    //2.发送请求
+    xmlHttp.open("GET","data.json",true);
+    xmlHttp.send();
+
+
+
+
+    //3.服务器回调
+    xmlHttp.onreadystatechange = function(){
+        if(xmlHttp.readyState == 4 && xmlHttp.status == 200){
+            return responseText;
+        }
+    };
+
+
+
+</script>
+
+</body>
+</html>
