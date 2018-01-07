@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function A(){
+        this.name = "lisi";
+        this.hobby = ['dance','sing'];
+    }
+
+    function B(){
+        A.call(this);
+    }
+
+    B.prototype = new A();
+    var oB1 = new B();
+    var oB2 = new B();
+    oB1.hobby.push("shopping");  //A.call(this);
+
+
+    console.log(oB1.hobby);
+    console.log(oB2.hobby);
+    console.log(oB1.constructor);
+    console.log(B.prototype.constructor);
+
+
+
+</script>
+
+</body>
+</html>
