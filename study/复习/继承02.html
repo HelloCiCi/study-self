@@ -16,6 +16,8 @@
     }
 
     B.prototype = new A();
+    B.prototype.constructor = B;
+
     var oB1 = new B();
     var oB2 = new B();
     oB1.hobby.push("shopping");  //A.call(this);
