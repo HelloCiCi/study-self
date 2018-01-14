@@ -20,6 +20,18 @@ class User extends CI_Controller {
      */
     public function index()
     {
-        $this->load->view('welcome_message');
+        $this->load->view('reg');
+    }
+
+    public function add(){
+        $name = $this->input->post('username');
+        echo $name;
+        $this->load->model('User_model');
+        $row = $this->User_model->add($name);
+        if($row>0){
+            echo 'success';
+        }else{
+            echo 'fail';
+        }
     }
 }
