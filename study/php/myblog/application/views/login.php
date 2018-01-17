@@ -115,7 +115,7 @@ $(function(){
 				$('#error_msg').html('密码错误');
     		$('#error_msg').show('fast');
 			}else{
-				location.href = 'welcome/index';
+				location.href = 'welcome/index_logined';
 			}
 		},'text')
 	});

@@ -105,19 +105,27 @@
 
 	  </li>
 <?php } ?>
+<?php echo $links?>
+
 </ul>
 <div class="clear"></div>
 	</div>
+	<div class="BlogMenu"><div class="admin SpaceModule">
+  <strong>博客管理</strong>
+  <ul class="LinkLine">
+	<li><a href="newBlog.htm">发表博客</a></li>
+			<li><a href="blogCatalogs.htm">博客分类管理</a></li>
+	<li><a href="blogs.htm">文章管理</a></li>
+	<li><a href="blogComments.htm">网友评论管理</a></li>
+  </ul>
+</div>
 <div class="BlogMenu"><div class="catalogs SpaceModule">
   <strong>博客分类</strong>
   <ul class="LinkLine">
-	<?php foreach($types as $type){?>
+		<?php foreach($types as $type){?>
     	<li><a href="#"><?php echo $type->type_name.'('.$type->num.')'?></a></li>
-		<li><a href="#"><?php echo $type->type_name.'('.$type->num.')'?></a></li>
-		<li><a href="#"><?php echo $type->type_name.'('.$type->num.')'?></a></li>
-	  </ul>
-
 		<?php } ?>
+	</ul>
 </div>
 <div class="comments SpaceModule">
   <strong>最新网友评论</strong>

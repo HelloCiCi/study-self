@@ -6,6 +6,7 @@ class User extends CI_Controller {
     public function __construct(){
         parent::__construct();
         $this->load->model('User_model');
+        $this->load->model('Article_model');
     }
 
 
@@ -102,6 +103,9 @@ class User extends CI_Controller {
         $pwd = $this->input->get('pwd');
 
         $result = $this->User_model->get_user_by_email($email);
+
+        // var_dump($result[0]);
+        // die();
         if(count($result) == 0){
             echo 'email_not_exist';
         }else{
@@ -117,18 +121,33 @@ class User extends CI_Controller {
     }
 
 
-    public function logout(){
+    public function logout()
+    {
         $this->session->unset_userdata('user');
         redirect('welcome/index');
     }
 
-    public function auto_login(){
+    public function auto_login()
+    {
             $email = $this->input->get('email');
             $result = $this->User_model->get_user_by_email($email);
             $this->session->set_userdata(array(
                 'user'=>$result[0]
             ));
             redirect('welcome/index');
+    }
+
+
+    public function admin_index()
+    {
+        $this->load->view('adminIndex');
+    }
+
+    public function new_blog()
+    {
+        $user = $this->session->userdata('user');
+        $result = $this->Article_model->get_type_by_id($user->user_id);
+        $this->load->view('newBlog',array('lists'=>$result));       
     }
 }
 ?>
