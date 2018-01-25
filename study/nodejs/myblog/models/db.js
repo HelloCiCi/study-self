@@ -1,7 +1,7 @@
 /**
  * Created by GYX on 18/1/21.
  */
-var mysql      = require('mysql');
+var mysql= require('mysql');
 
 exports.query = function(sql,callback){
     var connection = mysql.createConnection({

@@ -3,15 +3,17 @@ var user = require('../controllers/user');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
-});
-
 router.get('/login', user.login);
 
 router.get('/reg', user.reg);
 
 router.get('/register',user.register);
+
+router.post('/login',user.checklogin);
+
+router.get('/',user.index);
+
+module.exports = router;
 
 //router.post('/login',function(req,res){
 //  var username = req.body.username;
@@ -23,8 +25,6 @@ router.get('/register',user.register);
 //      });
 //  }
 //});
-
-module.exports = router;
 
 
 

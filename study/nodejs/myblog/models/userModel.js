@@ -8,4 +8,9 @@ exports.register = function(username,pwd1,callback){
     db.query(sql,callback);
 };
 
+exports.getUserByNameAndPwd = function(username,pwd,callback){
+    var sql = "select * from t_user where email='"+username+"' and password = '"+pwd+"'";
+    db.query(sql,callback);
+};
+
 
