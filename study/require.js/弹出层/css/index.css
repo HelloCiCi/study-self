@@ -1,0 +1,62 @@
+*{
+    margin:0px;
+    padding:0px;
+    border:0px;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    position:relative;
+}
+
+.container .mask{
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+}
+
+.container .dialog{
+    position:absolute;
+    width: 500px;
+    height: 400px;
+    top:50%;
+    left:50%;
+    margin-left: -250px;
+    margin-top: -150px;
+    background: #fff;
+    /*-webkit-transform:translate(50%,50%);*/
+}
+
+.container .dialog .title{
+    background: black;
+    height: 30px;
+    color:white;
+    line-height: 30px;
+}
+
+.container .dialog .title .title-content{
+    float:left;
+    margin-left: 15px;
+}
+
+.container .dialog .title .close{
+    float:right;
+    margin-right: 15px;
+}
+
+.content{
+    padding:15px;
+}
+
+.btn{
+    margin: 10px;
+    border:1px solid #000;
+}
+
+
