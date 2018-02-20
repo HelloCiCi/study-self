@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <style>
+                *{
+                    margin: 0;
+                    padding: 0;
+                }
+                li{
+                    list-style: none;
+                }
+                img{
+                    border: 0;
+                }
+                #container{
+                    position: relative;
+                    width: 520px;
+                    height: 280px;
+                    margin: 100px auto;
+                }
+                #imgs img{
+                    display: none;
+                }
+                #imgs .selected{
+                    display: block;
+                }
+                #nav{
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                }
+                #nav li, #arrows div{
+                    width: 20px;
+                    height: 20px;
+                    background: #000000;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 20px;
+                    float: left;
+                    margin-right: 5px;
+                    cursor: pointer;
+                }
+                #nav .selected{
+                    background: orange;
+                }
+                #arrows{
+                    position: absolute;
+                    left: 10px;
+                    bottom: 10px;
+                }
+        
+            </style>
+    
+        </head>
+        <body>
+            <div id="container">
+                <div id="imgs">
+                    <img src="img/1.jpg" alt="" class="selected">
+                    <img src="img/2.jpg" alt="">
+                    <img src="img/3.jpg" alt="">
+                    <img src="img/4.jpg" alt="">
+                </div>
+                <ul id="nav">
+                    <li class="selected">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+                <div id="arrows">
+                    <div id="left">&lt;</div>
+                    <div id="right">&gt;</div>
+                </div>
+            </div>
+        
+            <script src="jquery-1.11.2.js"></script>
+            <script>
+                $(function(){
+                    var nowIndex = 0;
+                    $("#nav li").on("mouseover",function(){
+                    $(this).addClass("selected").siblings().removeClass("selected");
+                    $("#imgs img").eq($(this).index()).addClass("selected").siblings().removeClass("selected");
+                });
+
+                $("#arrows div").on("click",function(){
+                    if($(this).attr("id") == "right"){
+                        nowIndex++;
+                        if(nowIndex == $("#imgs img").size()){
+                            nowIndex = 0;
+                        }
+                        changeImg();
+                    }else{
+                        nowIndex--;
+                        if(nowIndex == -1){
+                            nowIndex = $("#imgs img").size()-1;
+                        }
+                        changeImg();
+                    };
+                });
+
+                //  var timer = setInterval(function(){
+                //     $("#right").trigger("click");
+                // },1000);
+
+                // $("#container").on("mouseover",function(){
+                //     clearInterval(timer);
+                // });
+                // $("#container").on("mouseout",function(){
+                //     timer = setInterval(function(){
+                //     $("#right").trigger("click");
+                // },1000);
+                // });
+
+
+                $("#container").hover(function(){
+                    clearInterval(timer);
+                },function(){
+                    timer = setInterval(function(){
+                    $("#right").trigger("click");
+                },1000);
+                });
+
+
+
+
+
+                function changeImg(){
+                    $("#nav li").eq(nowIndex).addClass("selected").siblings().removeClass("selected");
+                    $("#imgs img").eq(nowIndex).addClass("selected").siblings().removeClass("selected");
+                }
+            });
+            </script>
+    
+</body>
+</html>
