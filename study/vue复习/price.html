@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0px;
+            border: 0px;
+            padding: 0px;
+        }
+
+        ul{
+
+        }
+
+        li{
+            list-style:none;
+            height: 50px;
+            margin: 0 auto;
+            margin-top: 10px;
+            width:250px;
+            background:#ccc;
+            line-height:50px;
+        }
+
+        #wrapper{
+            width: 300px;
+            height: 350px;
+            margin: 0 auto;
+            border-bottom:1px solid black;
+        }
+
+        #sum{
+            margin-left: 800px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        .name{
+            float:left;
+            margin-left:10px;
+        }
+
+        .price{
+            float:right;
+            margin-right: 10px;
+        }
+        .red{
+            background:red;
+        }
+    </style>
+</head>
+<div id = "app">
+    <div id="wrapper">
+        <h1>services</h1>
+        <ul>
+            <li v-for = "obj in arr" @click = "change(obj)" :class = {red:obj.active}>
+                <span class="name">{{obj.name}}</span><span class = "price">{{obj.price}}</span>
+            </li>
+        </ul>
+    </div>
+    <div id = "sum">total:<span>{{sum}}</span></div>
+</div>
+<script src = "vue.js"></script>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            arr:[
+                {name:"玉米",price:334,active:false},
+                {name:"玉米",price:392,active:false},
+                {name:"玉米",price:894,active:false},
+                {name:"玉米",price:128,active:false},
+                {name:"玉米",price:209,active:false}
+            ],
+            sum:0
+        },
+        methods:{
+            change(o){
+                o.active = !o.active;
+                this.total();
+            },
+            total(){
+                let total = 0;
+                this.arr.forEach(function(val,index){
+                    if(val.active){
+                        total += val.price;
+                    }
+                });
+                this.sum = total;
+            }
+        }
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

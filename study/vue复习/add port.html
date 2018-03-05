@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id = "app">
+    <input type = "text" id = "input" v-model = "msg">
+    <button @click = "add">add</button>
+    <ul id = "ul">
+        <li v-for = "obj in arr">{{obj.val}}</li>
+    </ul>
+</div>
+<script src="vue.js"></script>
+<script>
+
+  new Vue({
+      el:"#app",
+      data:{
+          msg:"",
+          arr:[]
+      },
+      methods:{
+          add(){
+//            oInput = document.getElementById("input");
+                this.arr.push({val:this.msg});
+                this.msg = "";
+                this.arr.sort(function(a,b){
+                    console.log(111);
+                  return a.val> b.val;
+                });
+          }
+      }
+
+  });
+
+
+
+
+</script>
+</body>
+</html>
