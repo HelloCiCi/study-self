@@ -6,10 +6,10 @@
 </head>
 <body>
 <div id = "app">
-    <input type = "text" id = "input" v-model = "msg">
+    <input type = "text" id = "input" v-model = "msg" @keyup = "search">
     <button @click = "add">add</button>
-    <ul id = "ul">
-        <li v-for = "obj in arr">{{obj.val}}</li>
+    <ul>
+        <li v-for = "obj in showArr">{{obj.val}}</li>
     </ul>
 </div>
 <script src="vue.js"></script>
@@ -19,7 +19,8 @@
       el:"#app",
       data:{
           msg:"",
-          arr:[]
+          arr:[],
+          showArr:[]
       },
       methods:{
           add(){
@@ -27,9 +28,17 @@
                 this.arr.push({val:this.msg});
                 this.msg = "";
                 this.arr.sort(function(a,b){
-                    console.log(111);
                   return a.val> b.val;
                 });
+                this.showArr = this.arr;
+          },
+          search(){
+//            var that = this;
+              var filterArr = this.arr.filter(obj=>{
+                  return obj.val.includes(this.msg);
+              });
+//            console.log(filterArr);
+                this.showArr = filterArr;
           }
       }
 
