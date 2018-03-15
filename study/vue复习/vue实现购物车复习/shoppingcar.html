@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        tbody tr{
+            text-align: center;
+            
+        }
+
+        table,td{
+            border: 1px solid black;
+        }
+        tr .wid{
+            width:100px;
+        }
+
+        .wid img{
+            width: 70px;
+        }
+
+        tr .jisuan{
+            width: 250px;
+        }
+
+    
+
+
+    
+    </style>
+</head>
+<body>
+    <div id = "app">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>商品图片</th>
+                    <th>商品信息</th>
+                    <th>赠送</th>
+                    <th>商品金额</th>
+                    <th>商品数量</th>
+                    <th>总金额</th>
+                    <th>编辑</th>
+                </tr>
+            </thead>
+            <tbody id = "tbody"> 
+                
+            </tbody>
+            <tfoot>
+                    <tr><td>总金额：<span class = "sum">0</span><td></tr>
+            </tfoot>
+        </table>
+    </div>
+    
+
+
+
+    <script src = "jquery-1.12.4.js"></script>
+    <!-- <script src = "../vue.js"></script> -->
+    <script>
+        // new Vue({
+
+        //     el:"#app",
+        //     data:{
+
+        //     },
+        //     methods:{
+
+        //     }
+        // });
+    $(function(){
+        var html = `<tr>
+                    <td class = "wid"><input type = "checkbox"></td>
+                    <td class = "wid"><img src = "$src"></td>
+                    <td class = "wid">$information</td>
+                    <td class = "wid">$give</td>
+                    <td class = "wid">$price</td>
+                    <td class = "wid jisuan">
+                        <button class = "minus">-</button>
+                        <input class = "input" type = "text" value = "$value"> 
+                        <button class = "add">+</button>
+                    </td>                    
+                   <td class = "wid total-price">$total</td>
+                    <td class = "wid del"><a href = "#">删除</a></td>
+                </tr>`;
+                
+                $.get('cart.json',{},function(res){
+                    var list = res.result.productList;
+                    for(var i = 0; i < list.length;i++){
+                        var result = html.replace("$src",list[i].productImg)
+                        .replace("$information",list[i].productName)
+                        .replace("$give",list[i].parts[i].partsName)
+                        .replace("$price",list[i].productPrice)
+                        .replace("$value",list[i].productQuentity)
+                        .replace("$total",list[i].productPrice * list[i].productQuentity)
+                        $('#tbody').append(result);
+                        
+                    };
+                    
+
+                    $("tr").on('click','.add',function(){  //第二个参数  是将add的事件委托给tr
+                        var $input = $(this).prev();
+                        $('input').val($input.val()*1+1);
+                        // $('.input').val($('.input').val()*1+1);
+                        $total = $('input').val() * $(this).parent().prev().text();
+                        $(this).parent().next().text($total);
+                        
+                        changeTotal();
+                        
+                
+                    });
+
+                    $("tr").on('click','.minus',function(){
+                        var $input = $(this).next();
+                        $('input').val($input.val()*1-1);
+                        $total = $('input').val() * $(this).parent().prev().text();
+                        $(this).parent().next().text($total);
+                        changeTotal();
+                        if($input.val() < 0){
+                            $input.val() == 0;
+                        }
+                    });
+
+                    $('tr').on('click','.del',function(){
+                        $(this).parent().remove();
+                    });
+
+                    $(':checkbox').on('click',function(){
+                        changeTotal();
+                    });
+
+                    function changeTotal(){
+                        var sumPrice = 0;
+                        $(':checked').each(function(index,el){
+                            sumPrice += $(el).parents('tr').find('.total-price').text()*1;
+                            $('.sum').text(sumPrice);
+                        });
+                    }
+
+                
+                    
+
+                    
+
+
+
+                    
+                },'json');
+
+
+
+
+
+
+    });
+    
+    
+    
+    
+    </script>
+</body>
+</html>

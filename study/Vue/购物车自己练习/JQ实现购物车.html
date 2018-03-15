@@ -82,6 +82,7 @@
 
             $('tr').on('click', '.add' ,function(){
                 var $input = $(this).prev();
+                console.log($input);
                 $input.val($input.val() * 1 + 1);
                 var $total = $(this).parent().prev().text() * $input.val()
                 $(this).parent().next().text($total);
