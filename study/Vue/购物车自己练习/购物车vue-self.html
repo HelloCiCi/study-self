@@ -81,10 +81,12 @@
             }
         },
         mounted:function(){
+            console.log(111);
             axios.get("cart.json").then((res)=>{
                 this.productList = res.data.result.productList;
+//                console.log(res);
             });
-        },
+        }
         methods:{
             add(obj){
                 obj.productQuentity++

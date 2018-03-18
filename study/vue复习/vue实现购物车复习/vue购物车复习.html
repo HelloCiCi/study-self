@@ -43,43 +43,74 @@
                 </tr>
             </thead>
             <tbody id = "tbody"> 
-                    <tr>
-                            <td class = "wid"><input type = "checkbox"></td>
-                            <td class = "wid"><img src = "$src"></td>
-                            <td class = "wid">$information</td>
-                            <td class = "wid">$give</td>
-                            <td class = "wid">$price</td>
+                    <tr v-for = "(obj,index) in resList">
+                            <td class = "wid"><input type = "checkbox" v-model = "checkboxList" :value = "obj"></td>
+                            <td class = "wid"><img :src = "obj.productImg"></td>
+                            <td class = "wid">{{obj.productName}}</td>
+                            <td class = "wid">
+                                <ul>
+                                    <li v-for = "part in obj.parts">{{part.partsName}}</li>
+                                </ul>
+                            </td>
+                            <td class = "wid">{{obj.productPrice}}</td>
                             <td class = "wid add">
-                                <button id = "minus">-</button>
-                                <input class = "input" type = "text" value = "$value"> 
-                                <button id = "add">+</button>
-                            </td>                    
-                           <td class = "wid total-price">$total</td>
-                            <td class = "wid del"><a href = "#">删除</a></td>
+                                <button id = "minus" @click = "minus(obj)">-</button>
+                                <input class = "input" type = "text" :value = "obj.productQuentity">
+                                <button id = "add" @click = "add(obj)">+</button>
+                            </td>
+                           <td class = "wid total-price">{{obj.productPrice*obj.productQuentity}}</td>
+                            <td class = "wid del" @click = "del(obj,index)"><a href = "#">删除</a></td>
                         </tr>
             </tbody>
             <tfoot>
-                    <tr><td>总金额：<span class = "sum">0</span><td></tr>
+                    <tr><td>总金额：<span class = "sum">{{totalPrice}}</span><td></tr>
             </tfoot>
         </table>
     </div>
-    <script src = "../vue.js"></script>
+    <script src = "vue.js"></script>
     <script src="axios.min.js"></script>
+    <script src = "jquery-1.12.4.js"></script>
     <script>
     
     new Vue({
         el:"#cart",
-        
         data:{
-            
+            resList:[],
+            checkboxList:[]
         },
         mounted:function(){
-            axios.get("cart.json").then((res)=>{
-                console.log(res.data);
-            });
+            console.log(111);
+           axios.get('cart.json').then((res)=>{
+               this.resList = res.data.result.productList;
+           });
         },
-        methods:{
+    computed:{
+        totalPrice:function(){
+            var total = 0;
+            this.checkboxList.forEach(function(arr,index){
+                total += arr.productPrice * arr.productQuentity;
+            });
+            return total;
         }
+    },
+    methods:{
+        add(obj){
+           obj.productQuentity++;
+        },
+        minus(obj){
+            obj.productQuentity--;
+            if(obj.productQuentity<0){
+                obj.productQuentity = 0;
+                alert("不能再低啦(づ￣3￣)づ╭❤～");
+            }
+        },
+        del(obj,index){
+//            $('.del').parent('tr').remove();
+            this.resList.splice(index,1);
+            this.checkboxList.splice(this.checkboxList.indexOf(obj),1);
+        }
+
+    }
     });
     
     </script>
