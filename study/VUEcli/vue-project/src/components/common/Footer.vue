@@ -22,13 +22,13 @@ export default {
 <style scoped>
   .footer{
     display: flex;
-    height: 6rem;
+    height: 1rem;
     width:100%;
-    line-height: 6rem;
+    line-height: 1rem;
     text-align: center;
     background: pink;
     color:#fff;
-    font-size: 1.8rem;
+    font-size: 0.3rem;
     position: fixed;
     bottom:0;
   }

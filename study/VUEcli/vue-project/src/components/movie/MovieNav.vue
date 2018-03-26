@@ -22,8 +22,8 @@ export default {
     display:flex;
     background:pink;
     position: fixed;
-    top:6rem;
-    height: 6rem;
+    top:1rem;
+    height: 1rem;
     width:100%;
     color:#fff;
 }
@@ -31,9 +31,9 @@ export default {
 
   .nav .nav-three{
       text-align: center;  
-      line-height: 6rem;
+      line-height: 1rem;
     float:left;
     flex:1;
-    font-size: 1.8rem;
+    font-size: 0.3rem;
     }
 </style>

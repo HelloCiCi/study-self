@@ -19,12 +19,12 @@ export default {
 <style scoped>
 .body{
   position: relative;
-  font-size: 10px;
 }
 .header{
   position: fixed;
-  height: 6rem;
-  line-height: 6rem;
+  top:0;
+  height: 1rem;
+  line-height: 1rem;
   text-align: center;
   width: 100%;
   display: flex;
@@ -40,6 +40,6 @@ export default {
   h1{
     flex: 9;
     text-align: center;
-    text-indent: -3rem;
+    text-indent: -0.8rem;
   }
 </style>
