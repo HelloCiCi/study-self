@@ -1,12 +1,13 @@
 <template>
-  <div class = "header">
+  <div class = "header" :style = "{background:bgcolor}">
     <p>首页</p>
-    <h1>Movie</h1>
+    <h1>{{title}}</h1>
   </div>
 </template>
 
 <script>
 export default {
+  props:['title','bgcolor'],
   data () {
     return {
       
@@ -28,7 +29,7 @@ export default {
   text-align: center;
   width: 100%;
   display: flex;
-  background: pink;
+  /* background: pink; */
   color:#fff;
 
   

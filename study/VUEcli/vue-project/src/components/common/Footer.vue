@@ -1,14 +1,15 @@
 <template>
-  <div class = "footer">
-    <p class = "four">电影</p>
-    <p class = "four">音乐</p>
-    <p class = "four">书籍</p>
-    <p class = "four">图片</p>
+  <div class = "footer" :style = "{background:footerColor}">
+    <p class = "four"><router-link to = "/">电影</router-link></p>
+    <p class = "four"><router-link to = "/music">音乐</router-link></p>
+    <p class = "four"><router-link to  = "/book">书籍</router-link></p>
+    <p class = "four"><router-link to = "/picture">图片</router-link></p>
   </div>
 </template>
 
 <script>
 export default {
+  props:['footerColor'],
   name: 'HelloWorld',
   data () {
     return {
@@ -26,8 +27,7 @@ export default {
     width:100%;
     line-height: 1rem;
     text-align: center;
-    background: pink;
-    color:#fff;
+    /* background: pink; */
     font-size: 0.3rem;
     position: fixed;
     bottom:0;
@@ -35,5 +35,13 @@ export default {
   .four{
     flex:1;
     float: left;
+  }
+
+  .four a{
+    color:#ccc;
+  }
+
+  .four a.router-link-active{
+    color:#fff;
   }
 </style>

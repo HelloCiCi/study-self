@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Header></Header>
+  <Header title = 'Movie' bgcolor = "pink"></Header>
   <movie-nav></movie-nav>
   <div class = "movieList">
     <Top250 v-for = "obj in movieList" :kkimg = 'obj.img' :kkcat = 'obj.cat' :kknm = 'obj.nm' :kkrt = 'obj.rt'></Top250>
@@ -8,7 +8,7 @@
   <div class = "loading">
     <img src = "/static/img/loading.gif" v-show = "show">
   </div>
-  <Footer></Footer>  
+  <Footer footerColor = "pink"></Footer>  
 </div>
 </template>
 
