@@ -1,8 +1,8 @@
 <template>
   <div class = "nav">
-    <div class = "nav-three">TOP250</div>
-    <div class = "nav-three">正在热映</div>
-    <div class = "nav-three">即将上映</div>
+    <div class = "nav-three"><router-link to = "/movie/Top250">TOP250</router-link></div>
+    <div class = "nav-three"><router-link to = "/movie/Hot250">正在热映</router-link></div>
+    <div class = "nav-three"><router-link to = "/movie/CommingSoon">即将上映</router-link></div>
   </div>
 </template>
 

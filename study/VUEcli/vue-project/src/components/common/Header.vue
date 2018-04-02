@@ -1,16 +1,23 @@
 <template>
   <div class = "header" :style = "{background:bgcolor}">
-    <p>首页</p>
+    <slot>
+      <p @click = "backit">{{back}}</p>
+    </slot>
     <h1>{{title}}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  props:['title','bgcolor'],
+  props:['title','bgcolor','back'],
   data () {
     return {
       
+    }
+  },
+  methods:{
+    backit(){
+      this.$router.go(-1);
     }
   }
 }

@@ -1,6 +1,7 @@
 <template>
   <div class="book">
-   <Common-header title = "Book" bgcolor = "rgb(120, 85, 72)" nav= "<"></Common-header>
+   <Common-header title = "Book" bgcolor = "rgb(120, 85, 72)" nav= "<">
+   </Common-header>
    <swipe class="my-swipe">
       <swipe-item class="item1"></swipe-item>
       <swipe-item class="item2"></swipe-item>

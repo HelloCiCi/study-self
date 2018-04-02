@@ -1,13 +1,10 @@
 <template>
 <div>
-  <Header title = 'Movie' bgcolor = "pink"></Header>
-  <movie-nav></movie-nav>
-  <div class = "movieList">
-    <Top250 v-for = "obj in movieList" :kkimg = 'obj.img' :kkcat = 'obj.cat' :kknm = 'obj.nm' :kkrt = 'obj.rt'></Top250>
-  </div>
-  <div class = "loading">
-    <img src = "/static/img/loading.gif" v-show = "show">
-  </div>
+  <Header title = 'Movie' bgcolor = "pink" back = "首页">
+    <p>首页</p>
+  </Header>
+  <Movie-nav></Movie-nav>
+  <router-view></router-view> 
   <Footer footerColor = "pink"></Footer>  
 </div>
 </template>
@@ -15,57 +12,25 @@
 <script>
 import Header from '../../components/common/Header'
 import Footer from '../../components/common/Footer'
-import MovieNav from '../../components/movie/MovieNav'
-import Top250 from '../../components/movie/Top250'
-import Axios from 'axios'
+import MovieNav from './MovieNav'
+import MovieList from './MovieLi';
+
 export default {
   data () {
     return {
-      movieList:[],
-      show: false
-    }
-  },
-  mounted(){
-    var that = this;
-    window.onscroll = function(){
-      var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
-      var clientHeight = document.documentElement.clientHeight;
-      var htmlHeight = document.documentElement.scrollHeight;
-
-      if(scrollTop+clientHeight >= htmlHeight){
-        that.show = true;
-        that.loadingData();
-      }
-    };
-    this.loadingData();
-    
-  },
-  methods:{
-    loadingData(){
-      Axios.get(API_PROXY+"http://m.maoyan.com/movie/list.json?type=hot&offset="+this.movieList.length+"&limit=10").then((res)=>{
-      // console.log(res.data.data.movies);
-      this.movieList = this.movieList.concat(res.data.data.movies);
-    });
+      
     }
   },
   components:{
       Header,
       Footer,
-      Top250,
-      MovieNav
+      MovieNav,
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .movieList{
-   margin-top:2rem;
-    width:100%;
-  }
-
-  .loading{
-    margin-bottom: 2rem;
-  }
+  
 </style>
 

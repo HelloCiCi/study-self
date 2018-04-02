@@ -1,54 +1,62 @@
 <template>
-      <ul class = "Top250">
-          <li class = "top-li">
-            <img :src = "kkimg" class = "movie-img">
-            <div class = "movie-detail">
-                <p class = "movie-name">{{kknm}}</p>
-                <span>{{kkcat}}</span>
-                <span>{{kkrt}}</span>
-            </div>
-          </li>
-      </ul>
+<div>
+        <div class = "movieList">
+            <MovieLi v-for = "obj in movieList" :kkimg = 'obj.img' :kkcat = 'obj.cat' :kknm = 'obj.nm' :kkrt = 'obj.rt'></MovieLi>
+        </div>
+        <div class = "loading">
+            <img src = "/static/img/loading.gif" v-show = "show">
+        </div>
+</div>
 </template>
 
 <script>
+import MovieLi from './MovieLi'
+import Axios from 'axios'
+
 export default {
-    props:['kkimg','kkcat','kknm','kkrt'],
   data () {
     return {
-      
+      movieList:[],
+      show: false
     }
+  },
+  mounted(){
+    var that = this;
+    window.onscroll = function(){
+      var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+      var clientHeight = document.documentElement.clientHeight;
+      var htmlHeight = document.documentElement.scrollHeight;
+
+      if(scrollTop+clientHeight >= htmlHeight){
+        that.show = true;
+        that.loadingData();
+      }
+    };
+    this.loadingData();
+    
+  },
+  methods:{
+    loadingData(){
+      Axios.get(API_PROXY+"http://m.maoyan.com/movie/list.json?type=hot&offset="+this.movieList.length+"&limit=10").then((res)=>{
+      // console.log(res.data.data.movies);
+      this.movieList = this.movieList.concat(res.data.data.movies);
+    });
+    }
+  },
+  components:{
+      MovieLi
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .Top250{
-      width:100%;
-      /* margin:0.4rem 0rem; */
-  }
-  .movie-img{
-      height: 1rem;
-      margin: 0.1rem 0.2rem;
-      float: left;
-      flex:1;
-  }
-  .movie-detail{
-      float: left;
-      font-size:0.3rem;
-      height: 1rem;
-      margin-top:0.1rem;
-      border-bottom:solid 1px #ccc;
-      flex:5;
-      width: 100%;
-      /* background: pink; */
+  .movieList{
+   margin-top:2rem;
+    width:100%;
   }
 
-  .top-li{
-      display: flex;
-      height: 1.2rem;
-      width: 100%;
-      /* background: orange; */
+  .loading{
+    margin-bottom: 2rem;
   }
 </style>
