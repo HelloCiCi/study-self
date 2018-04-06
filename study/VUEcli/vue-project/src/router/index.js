@@ -7,6 +7,8 @@ import Picture from '@/components/picture/Picture'
 import Top250 from '@/components/movie/Top250'
 import MusicPlayer from '@/components/music/MusicPlayer'
 import MusicStyle from '@/components/music/MusicStyle'
+import ComponentA from '@/components/ComponentA'
+import PictureDetail from '@/components/picture/PictureDetail'
 
 Vue.use(Router)
 
@@ -14,6 +16,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      // component: ComponentA
       redirect:'/movie/Top250'
     },
     {
@@ -43,5 +46,9 @@ export default new Router({
       path:'/picture',
       component: Picture
     }
+    // {
+    //   path:'/picture_detail/:index',
+    //   component: PictureDetail
+    // }
   ]
 })
